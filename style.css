@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/**
+ * Theme Name:  Тема Портфолио Плотникова Ивана
+ *
+ * Version:     1.0
+ */
+/* reset */
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a,
+h2,
+h3 {
+  text-decoration: none;
+  color: inherit;
+}
+a:visited,
+h2:visited,
+h3:visited {
+  color: inherit;
+}
+a:active, a:focus,
+h2:active,
+h2:focus,
+h3:active,
+h3:focus {
+  color: inherit;
+  outline: none;
+}
+
+ol,
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  border: none;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+input,
+textarea {
+  outline: none;
+  border: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  margin: 0;
+}
+
+html,
+body {
+  line-height: 1;
+}
+
+/*----------------*/

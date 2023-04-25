@@ -1,0 +1,60 @@
+/**
+ * Theme Name:  Тема Портфолио Плотникова Ивана
+ *
+ * Version:     1.0
+ */
+/* reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+a,
+h2,
+h3 {
+  text-decoration: none;
+  color: inherit;
+  &:visited {
+    color: inherit;
+  }
+  &:active,
+  &:focus {
+    color: inherit;
+    outline: none;
+  }
+}
+
+ol,
+li {
+  list-style: none;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+img {
+  border: none;
+  object-fit: contain;
+}
+input,
+textarea {
+  outline: none;
+  border: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  margin: 0;
+}
+html,
+body {
+  line-height: 1;
+}
+/*----------------*/
