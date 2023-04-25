@@ -5,6 +5,128 @@ body {
   margin: 0;
 }
 
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  color: #333;
+}
+
 .section {
-  background-color: #777;
+  padding: 0 20px;
+}
+
+.header {
+  background-color: #2a3256;
+}
+.header__inner {
+  min-height: 95px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__logo a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70px;
+  height: 70px;
+}
+.header__logo a img {
+  width: 100%;
+  height: 100%;
+}
+
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__nav #menu-verhnee-menyu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.header__nav #menu-verhnee-menyu .menu-item {
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 3px 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #4268ad;
+  color: #d4e9ff;
+  border-radius: 3px;
+  letter-spacing: 0.04em;
+}
+.header__nav #menu-verhnee-menyu .current-menu-item {
+  background-color: #d4e9ff;
+  color: #4268ad;
+}
+
+.collapse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.collapse .fa {
+  display: none;
+  font-size: 32px;
+  color: #d4e9ff;
+}
+.collapse .collapse_active {
+  display: block;
+}
+
+.page {
+  padding: 20px 0 25px;
+}
+
+.header__inner_hide {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.header__inner_hide .header__logo,
+.header__inner_hide .header__nav {
+  display: none;
+}
+
+.header_fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.header_collapse .header__inner {
+  min-height: 20px;
 }

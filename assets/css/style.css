@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Theme Name:  Тема Портфолио Плотникова Ивана
  *
@@ -5,48 +6,63 @@
  */
 /* reset */
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
 *,
 *::after,
 *::before {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
+
 a,
 h2,
 h3 {
   text-decoration: none;
   color: inherit;
-  &:visited {
-    color: inherit;
-  }
-  &:active,
-  &:focus {
-    color: inherit;
-    outline: none;
-  }
+}
+a:visited,
+h2:visited,
+h3:visited {
+  color: inherit;
+}
+a:active, a:focus,
+h2:active,
+h2:focus,
+h3:active,
+h3:focus {
+  color: inherit;
+  outline: none;
 }
 
 ol,
 li {
   list-style: none;
 }
+
 ul {
   padding: 0;
   margin: 0;
 }
+
 p {
   margin: 0;
 }
+
 img {
   border: none;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
+
 input,
 textarea {
   outline: none;
   border: 0;
 }
+
 h1,
 h2,
 h3,
@@ -56,4 +72,5 @@ h6 {
   font-weight: inherit;
   margin: 0;
 }
+
 /*----------------*/

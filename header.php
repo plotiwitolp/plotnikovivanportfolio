@@ -10,10 +10,25 @@
 <?php wp_head(); ?>
 
 <body>
-    <header>
+    <header class="header">
         <div class="section">
-            <?php wp_nav_menu([
-                'theme_location'  => 'primary'
-            ]); ?>
+            <div class="header__inner">
+                <div class="header__logo">
+                    <?php if (function_exists('the_custom_logo')) {
+                        the_custom_logo();
+                    } ?>
+                </div>
+
+                <nav class="header__nav">
+                    <?php wp_nav_menu([
+                        'theme_location'  => 'primary'
+                    ]); ?>
+                </nav>
+
+                <div class="collapse">
+                    <i class="fa fa-angle-up collapse_active" aria-hidden="true"></i>
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </div>
+            </div>
         </div>
     </header>
