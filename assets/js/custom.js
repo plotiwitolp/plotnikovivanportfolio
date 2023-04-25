@@ -4,16 +4,14 @@
     // START jQuery
 
     let isScroll = 0,
-      targetScroll = 120;
+      targetScroll = 32;
     $(window).on('scroll', function () {
       if (isScroll === 0 && $(this).scrollTop() >= targetScroll) {
         isScroll = 1;
         faAngleDown();
-        $('.header').addClass('header_fixed');
       } else if (isScroll === 1 && $(this).scrollTop() < targetScroll) {
         isScroll = 0;
         faAngleUp();
-        $('.header').removeClass('header_fixed');
       }
     });
 
@@ -31,6 +29,7 @@
       $('.fa-angle-down').removeClass('collapse_active');
       //
       $('.header').removeClass('header_collapse');
+      $('.header').addClass('animate__animated animate__fadeInDown');
       $('.header__inner').removeClass('header__inner_hide');
     }
     function faAngleDown() {
@@ -38,6 +37,7 @@
       $('.fa-angle-down').addClass('collapse_active');
       //
       $('.header').addClass('header_collapse');
+      $('.header').removeClass('animate__animated animate__fadeInDown');
       $('.header__inner').addClass('header__inner_hide');
     }
     // end functions

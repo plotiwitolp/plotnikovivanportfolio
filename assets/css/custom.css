@@ -5,6 +5,12 @@ body {
   margin: 0;
 }
 
+#wpadminbar {
+  top: auto;
+  bottom: 0;
+  position: fixed !important;
+}
+
 body {
   min-width: 320px;
   overflow-x: hidden;
@@ -15,6 +21,11 @@ body {
   padding: 0 20px;
 }
 
+@media (min-width: 640px) {
+  .section {
+    padding: 0 40px;
+  }
+}
 .header {
   background-color: #2a3256;
 }
@@ -28,6 +39,11 @@ body {
           justify-content: space-between;
 }
 
+@media (min-width: 640px) {
+  .header__inner {
+    min-height: 60px;
+  }
+}
 .header__logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -41,13 +57,17 @@ body {
   display: -ms-flexbox;
   display: flex;
   width: 70px;
-  height: 70px;
 }
 .header__logo a img {
   width: 100%;
   height: 100%;
 }
 
+@media (min-width: 640px) {
+  .header__logo a {
+    width: 50px;
+  }
+}
 .header__nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -89,6 +109,18 @@ body {
   color: #4268ad;
 }
 
+@media (min-width: 640px) {
+  .header__nav #menu-verhnee-menyu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .header__nav #menu-verhnee-menyu .menu-item {
+    margin-bottom: 0;
+    margin-left: 10px;
+  }
+}
 .collapse {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -96,6 +128,7 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  cursor: pointer;
 }
 .collapse .fa {
   display: none;
@@ -107,7 +140,7 @@ body {
 }
 
 .page {
-  padding: 20px 0 25px;
+  padding: 105px 0 25px;
 }
 
 .header__inner_hide {

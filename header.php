@@ -10,7 +10,7 @@
 <?php wp_head(); ?>
 
 <body>
-    <header class="header">
+    <header class="header header_fixed">
         <div class="section">
             <div class="header__inner">
                 <div class="header__logo">
