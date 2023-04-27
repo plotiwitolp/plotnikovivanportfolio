@@ -18,7 +18,7 @@ img {
 }
 
 .section {
-  padding: 0 20px;
+  padding: 3px 20px;
 }
 
 .header {
@@ -83,7 +83,7 @@ img {
   }
 }
 .page {
-  padding: 80px 0 25px;
+  padding: 67px 0 25px;
 }
 
 .header__inner_hide {
@@ -124,11 +124,55 @@ h2 {
   }
 }
 
-// start meadia
+.block-top {
+  background-color: #2a3256;
+  position: relative;
+}
+.about {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  right: 20px;
+  &__greet {
+    margin-bottom: 5px;
+    font-size: 24px;
+    line-height: 1.2em;
+    font-weight: 500;
+  }
+}
+.about__desc {
+  width: 145px;
+}
+.mypic {
+  width: 185px;
+  margin-left: auto;
+  margin-top: 60px;
+}
+
+// start @MEDIA
+
+// start 360px
+@media (min-width: 360px) {
+  .mypic {
+    width: 235px;
+  }
+}
+// start 470px
+@media (min-width: 470px) {
+  .mypic {
+    width: 235px;
+    margin-top: 0;
+  }
+
+  .about__desc {
+    width: 220px;
+  }
+}
 // start 640px
 @media (min-width: 640px) {
   .section {
-    padding: 0 40px;
+    padding: 6px 40px;
   }
 
   .header__logo {
@@ -150,13 +194,27 @@ h2 {
   h1 {
     text-align: left;
   }
+  .about {
+    top: 50px;
+  }
+  .mypic {
+    width: 280px;
+  }
+  .about__desc {
+    width: 330px;
+  }
+  .about__greet {
+    margin-bottom: 30px;
+  }
+  .about__whoami {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
 }
-// end 640px
-
 // start 768px
 @media (min-width: 768px) {
   .section {
-    padding: 0 60px;
+    padding: 8px 60px;
   }
 
   .header__logo {
@@ -170,14 +228,12 @@ h2 {
     padding: 90px 0 25px;
   }
 }
-// end 768px
-
 // start 1024px
 @media (min-width: 1024px) {
   .section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 80px;
+    padding: 10px 80px;
   }
 
   .header__logo {
@@ -185,11 +241,9 @@ h2 {
       width: 70px;
     }
   }
-
   .page {
     padding: 110px 0 25px;
   }
 }
-// end 1024px
 
-// end meadia
+// end @MEDIA
