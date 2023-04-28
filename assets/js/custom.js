@@ -23,6 +23,9 @@
       }
     });
 
+    $('.portfolio-slider').slick();
+    $('.reviews-slider').slick();
+
     // start functions
     function faAngleUp() {
       $('.fa-angle-up').addClass('collapse_active');

@@ -3,6 +3,7 @@ body {
   font-weight: 400;
   line-height: 1.32em;
   margin: 0;
+  background-color: #eee;
 }
 
 @import 'vars';
@@ -12,6 +13,7 @@ body {
   overflow-x: hidden;
   color: $color3;
 }
+
 img {
   width: 100%;
   height: 100%;
@@ -21,14 +23,15 @@ img {
   padding: 3px 20px;
 }
 
-.header {
+.header .section {
   background-color: $color1;
   color: $color2;
-  &__inner {
-    min-height: 60px;
+  .header__inner {
+    min-height: 30px;
     display: flex;
     justify-content: space-between;
   }
+  // box-shadow: 0 0px 7px 2px $color4;
 }
 .header__logo {
   display: flex;
@@ -83,10 +86,10 @@ img {
   }
 }
 .page {
-  padding: 67px 0 25px;
+  padding: 45px 0 0;
 }
 
-.header__inner_hide {
+.header .section .header__inner_hide {
   justify-content: flex-end;
   .header__logo,
   .header__nav {
@@ -98,6 +101,7 @@ img {
   left: 0;
   right: 0;
   top: 0;
+  z-index: 999;
 }
 .header_collapse {
   .header__inner {
@@ -125,15 +129,17 @@ h2 {
 }
 
 .block-top {
-  background-color: #2a3256;
+  background-color: $color1;
   position: relative;
+  padding-top: 20px;
 }
 .about {
   color: #fff;
   position: absolute;
-  top: 10px;
+  top: 35px;
   left: 20px;
   right: 20px;
+  z-index: 99;
   &__greet {
     margin-bottom: 5px;
     font-size: 24px;
@@ -148,10 +154,133 @@ h2 {
   width: 185px;
   margin-left: auto;
   margin-top: 60px;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 370px;
+    background: linear-gradient(0deg, black, transparent);
+    z-index: 9;
+  }
+}
+.btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 99;
+}
+.btn {
+  color: #000;
+  background-color: $color5;
+  font-size: 14px;
+  padding: 10px 20px;
+  width: fit-content;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.block-technology,
+.block-reviews {
+  border: 1px solid $color1;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.block-portfolio,
+.block-feddbackform {
+  background-color: $color1;
+  color: #fff;
+  padding-top: 25px;
+  padding-bottom: 55px;
+}
+
+footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding-top: 25px;
+  padding-bottom: 55px;
+}
+
+.technology {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.technology-item {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 20px);
+  background-color: $color4;
+  color: #fff;
+  padding: 7px 10px;
+}
+.technology-item__title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.technology-item__progress {
+  margin: 10px 0 10px;
+  background-color: $color1;
+  border-radius: $bradius2;
+  display: flex;
+  overflow: hidden;
+  box-shadow: -2px 1px 5px #000 inset;
+  span {
+    height: 10px;
+    background-color: #fff;
+    box-shadow: 1px 2px 5px #000000 inset;
+  }
+
+  .html {
+    width: 80%;
+  }
+  .css {
+    width: 90%;
+  }
+  .scss {
+    width: 75%;
+  }
+  .flex-grid {
+    width: 75%;
+  }
+  .javascript {
+    width: 70%;
+  }
+  .php {
+    width: 50%;
+  }
+  .wp {
+    width: 70%;
+  }
+  .elementor {
+    width: 55%;
+  }
+  .acf {
+    width: 70%;
+  }
+  .figma {
+    width: 60%;
+  }
+}
+
+.page > .section {
+  border-left: 1px solid $color1;
+  border-right: 1px solid $color1;
+}
+
+html:has(.customize-support) .header_fixed {
+  top: 45px !important;
+}
+#wpadminbar {
+  position: fixed;
 }
 
 // start @MEDIA
-
 // start 360px
 @media (min-width: 360px) {
   .mypic {
@@ -196,6 +325,8 @@ h2 {
   }
   .about {
     top: 50px;
+    left: 40px;
+    right: 40px;
   }
   .mypic {
     width: 280px;
@@ -217,15 +348,39 @@ h2 {
     padding: 8px 60px;
   }
 
-  .header__logo {
-    a {
-      width: 60px;
-      margin: 7px 0;
-    }
-  }
+  // .header__logo {
+  //   a {
+  //     width: 60px;
+  //     margin: 7px 0;
+  //   }
+  // }
 
   .page {
-    padding: 90px 0 25px;
+    padding: 65px 0 0;
+  }
+  .mypic {
+    width: 360px;
+  }
+  .about {
+    left: 60px;
+    right: 60px;
+  }
+  .about__greet {
+    margin-bottom: 30px;
+  }
+  .about__desc {
+    width: 340px;
+    line-height: 1.5em;
+  }
+  .about__whoami {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+}
+// start 783px
+@media (min-width: 783px) {
+  html:has(.customize-support) .header_fixed {
+    top: 32px !important;
   }
 }
 // start 1024px
@@ -236,13 +391,21 @@ h2 {
     padding: 10px 80px;
   }
 
-  .header__logo {
-    a {
-      width: 70px;
-    }
-  }
+  // .header__logo {
+  //   a {
+  //     width: 70px;
+  //   }
+  // }
   .page {
-    padding: 110px 0 25px;
+    padding: 70px 0 0;
+  }
+  .about {
+    left: 80px;
+    right: 80px;
+  }
+
+  .technology-item {
+    width: calc(20% - 20px);
   }
 }
 

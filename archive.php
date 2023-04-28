@@ -7,10 +7,8 @@
             </div>
             <div class="portfolio-list">
                 <?php
-                $category_id = get_cat_ID('Портфолио');
                 $args = array(
-                    'cat' => $category_id,
-                    'post_type' => 'post',
+                    'post_type' => 'portfolio',
                     'posts_per_page' => 10
                 );
                 $query = new WP_Query($args);
