@@ -23,8 +23,41 @@
       }
     });
 
-    $('.portfolio-slider').slick();
-    $('.reviews-slider').slick();
+    $('.portfolio-slider').slick({
+      prevArrow: $('.portfolio-slider-btns__prev'),
+      nextArrow: $('.portfolio-slider-btns__next'),
+      slidesToShow: 1,
+      dots: true,
+    });
+    $('.reviews-slider').slick({
+      prevArrow: $('.reviews-slider-btns__prev'),
+      nextArrow: $('.reviews-slider-btns__next'),
+      slidesToShow: 3,
+      dots: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            dots: false,
+          },
+        },
+        {
+          breakpoint: 640,
+          settings: {
+            slidesToShow: 1,
+            dots: false,
+          },
+        },
+      ],
+    });
 
     // start functions
     function faAngleUp() {

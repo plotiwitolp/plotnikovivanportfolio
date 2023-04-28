@@ -235,7 +235,7 @@ h2 {
   padding-bottom: 55px;
 }
 
-footer {
+footer .section {
   background-color: #1a1a1a;
   color: #fff;
   padding-top: 25px;
@@ -249,6 +249,8 @@ footer {
   gap: 20px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .technology-item {
@@ -323,12 +325,70 @@ footer {
   border-right: 1px solid #2a3256;
 }
 
+html:has(.customize-support) body {
+  padding-top: 45px;
+}
+
 html:has(.customize-support) .header_fixed {
   top: 45px !important;
 }
 
 #wpadminbar {
   position: fixed;
+}
+
+.block-portfolio,
+.block-reviews {
+  position: relative;
+}
+
+.portfolio-slider-btns,
+.reviews-slider-btns {
+  position: absolute;
+  height: 50px;
+  top: calc(50% - 25px);
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 40px;
+}
+.portfolio-slider-btns > div,
+.reviews-slider-btns > div {
+  cursor: pointer;
+}
+
+ul.slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 5px;
+  margin: 15px;
+}
+ul.slick-dots button {
+  display: none;
+}
+ul.slick-dots li {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #7a7a7a;
+  cursor: pointer;
+}
+ul.slick-dots .slick-active {
+  background-color: #4268ad;
+  color: #fff;
 }
 
 @media (min-width: 360px) {
@@ -384,7 +444,7 @@ html:has(.customize-support) .header_fixed {
     padding: 8px 60px;
   }
   .page {
-    padding: 65px 0 0;
+    padding: 50px 0 0;
   }
   .mypic {
     width: 360px;
@@ -417,7 +477,7 @@ html:has(.customize-support) .header_fixed {
     padding: 10px 80px;
   }
   .page {
-    padding: 70px 0 0;
+    padding: 55px 0 0;
   }
   .about {
     left: 80px;

@@ -147,7 +147,17 @@
                 echo 'К сожалени, в портфолио пока ничего нет.';
             }
             ?>
+
         </div>
+        <div class="portfolio-slider-btns">
+            <div class="portfolio-slider-btns__prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </div>
+            <div class="portfolio-slider-btns__next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </div>
+        </div>
+
     </div>
     <div class="block-reviews section">
         <div class="section__title">
@@ -184,6 +194,14 @@
                 echo 'К сожалению, отзывов пока нет.';
             }
             ?>
+        </div>
+        <div class="reviews-slider-btns">
+            <div class="reviews-slider-btns__prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </div>
+            <div class="reviews-slider-btns__next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </div>
         </div>
     </div>
     <div class="block-feddbackform section">

@@ -41,7 +41,7 @@ function create_portfolio_post_type()
         'portfolio',
         array(
             'public' => true,
-            'has_archive' => true,
+            // 'has_archive' => true,
             'menu_icon' => 'dashicons-portfolio',
             'labels' => array(
                 'name' => __('Портфолио'),
@@ -49,7 +49,7 @@ function create_portfolio_post_type()
                 'add_new' => __('Добавить новое портфолио'),
             ),
             'supports' => array('title', 'editor', 'thumbnail', 'tag'),
-            'rewrite' => array('slug' => 'portfolio'),
+            // 'rewrite' => array('slug' => 'portfolio'),
             'menu_position'      => 4,
             'taxonomies' => array('post_tag')
         )
