@@ -116,7 +116,7 @@ h1 {
 }
 
 h2 {
-  margin: 5px 0 10px;
+  margin: 10px 0 25px;
   font-weight: 500;
   line-height: 1.07em;
 }
@@ -291,21 +291,121 @@ html:has(.customize-support) .header_fixed {
   position: relative;
 }
 
-.portfolio-slider-btns,
+// start portfolio
+.portfolio-gallery {
+  display: grid;
+  gap: 15px;
+}
+.portfolio-gallery-item {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+  .portfolio-gallery-item__pic {
+    position: relative;
+    img {
+      transition-property: transform;
+      transition-duration: 0.38s;
+      transition-timing-function: ease-in-out;
+    }
+    &::after {
+      content: '';
+      background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.38) 38%, rgba(0, 0, 0, 0.38) 62%, rgba(0, 0, 0, 1) 100%);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transition-property: background;
+      transition-duration: 0.38s;
+      transition-timing-function: ease-in-out;
+    }
+  }
+}
+.portfolio-gallery-item__title,
+.portfolio-gallery-item__desc,
+.portfolio-gallery-item__more {
+  position: relative;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-property: top, bottom;
+  transition-duration: 0.38s;
+  transition-timing-function: ease-in-out;
+}
+.portfolio-gallery-item__title {
+  top: 0;
+  margin-bottom: -60px;
+  padding: 10px 15px;
+  min-height: 60px;
+  font-weight: 600;
+}
+.portfolio-gallery-item__desc {
+  bottom: 0;
+  min-height: 50px;
+  margin-top: -80px;
+  padding: 5px 15px;
+}
+.portfolio-gallery-item__more {
+  bottom: -50px;
+  min-height: 30px;
+  a {
+    width: fit-content;
+    text-align: center;
+    padding: 0 12px;
+    background-color: $color5;
+    color: #000;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    font-weight: 700;
+  }
+}
+.portfolio-gallery-item {
+  &:hover {
+    .portfolio-gallery-item__title {
+      top: -50px;
+    }
+    .portfolio-gallery-item__desc {
+      bottom: -100px;
+    }
+    .portfolio-gallery-item__more {
+      bottom: calc(50% - 15px);
+    }
+    .portfolio-gallery-item__pic {
+      img {
+        transform: scale(1.2);
+      }
+      &::after {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 38%, rgba(0, 0, 0, 0.1) 62%, rgba(0, 0, 0, 1) 100%);
+      }
+    }
+  }
+}
+// end portfolio
+
 .reviews-slider-btns {
   position: absolute;
   height: 50px;
   top: calc(50% - 25px);
-  left: 0;
-  right: 0;
+  left: 10px;
+  right: 10px;
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
   align-items: center;
-  font-size: 40px;
   & > div {
     cursor: pointer;
   }
+  .fa {
+    font-size: 22px;
+  }
+}
+
+.reviews-slider-item__pic {
+  padding: 20px;
 }
 
 ul.slick-dots {
@@ -394,6 +494,10 @@ ul.slick-dots {
   .about__whoami {
     font-size: 20px;
     margin-bottom: 10px;
+  }
+
+  .portfolio-gallery {
+    grid-template-columns: 1fr 1fr;
   }
 }
 

@@ -111,7 +111,8 @@
                 Портфолио
             </h2>
         </div>
-        <div class="portfolio-slider">
+        <!-- <div class="portfolio-slider"> -->
+        <div class="portfolio-gallery">
             <?php
             $args = array(
                 'post_type' => 'portfolio',
@@ -122,19 +123,19 @@
                 while ($query->have_posts()) {
                     $query->the_post();
             ?>
-                    <div class="portfolio-slider-item">
-                        <div class="portfolio-slider-item__title"><?= get_the_title() ?></div>
+                    <div class="portfolio-gallery-item">
+                        <div class="portfolio-gallery-item__title"><?= get_the_title() ?></div>
                         <?php if (has_post_thumbnail()) : ?>
-                            <div class="portfolio-slider-item__pic">
+                            <div class="portfolio-gallery-item__pic">
                                 <?php the_post_thumbnail(); ?>
                             </div>
 
                         <?php endif; ?>
 
-                        <div class="portfolio-slider-item__desc">
+                        <div class="portfolio-gallery-item__desc">
                             <?= get_the_content() ?>
                         </div>
-                        <div class="portfolio-slider-item__more">
+                        <div class="portfolio-gallery-item__more">
                             <a href="<?= get_permalink(); ?>">
                                 Подробнее
                             </a>
@@ -149,14 +150,14 @@
             ?>
 
         </div>
-        <div class="portfolio-slider-btns">
+        <!-- <div class="portfolio-slider-btns">
             <div class="portfolio-slider-btns__prev">
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>
             </div>
             <div class="portfolio-slider-btns__next">
                 <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </div>
-        </div>
+        </div> -->
 
     </div>
     <div class="block-reviews section">
@@ -178,7 +179,7 @@
             ?>
                     <div class="reviews-slider-item">
                         <?php if (has_post_thumbnail()) : ?>
-                            <div class="portfolio-slider-item__pic">
+                            <div class="reviews-slider-item__pic">
                                 <?php the_post_thumbnail(); ?>
                             </div>
 

@@ -23,12 +23,12 @@
       }
     });
 
-    $('.portfolio-slider').slick({
-      prevArrow: $('.portfolio-slider-btns__prev'),
-      nextArrow: $('.portfolio-slider-btns__next'),
-      slidesToShow: 1,
-      dots: true,
-    });
+    // $('.portfolio-slider').slick({
+    //   prevArrow: $('.portfolio-slider-btns__prev'),
+    //   nextArrow: $('.portfolio-slider-btns__next'),
+    //   slidesToShow: 1,
+    //   dots: true,
+    // });
     $('.reviews-slider').slick({
       prevArrow: $('.reviews-slider-btns__prev'),
       nextArrow: $('.reviews-slider-btns__next'),
