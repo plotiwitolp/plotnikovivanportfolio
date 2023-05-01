@@ -356,7 +356,6 @@ html:has(.customize-support) .header_fixed {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: hidden;
-  border-radius: 10px;
 }
 .portfolio-gallery-item .portfolio-gallery-item__pic {
   position: relative;
@@ -515,6 +514,39 @@ ul.slick-dots .slick-active {
   color: #fff;
 }
 
+.feddbackform,
+.feddbackform__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+.feddbackform .feddbackform-item__label {
+  margin-bottom: 7px;
+}
+.feddbackform input,
+.feddbackform textarea,
+.feddbackform select {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 18px;
+  outline: none;
+}
+.feddbackform select {
+  cursor: pointer;
+}
+
+input[type=submit] {
+  cursor: pointer;
+  background-color: #efc540;
+  font-weight: 600;
+}
+
 @media (min-width: 360px) {
   .mypic {
     width: 235px;
@@ -565,10 +597,18 @@ ul.slick-dots .slick-active {
   .portfolio-gallery {
     grid-template-columns: 1fr 1fr;
   }
+  .block-technology,
+  .block-portfolio,
+  .block-reviews,
+  .block-feddbackform {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
 }
 @media (min-width: 768px) {
   .section {
-    padding: 8px 60px;
+    padding-left: 60px;
+    padding-right: 60px;
   }
   .page {
     padding: 50px 0 0;
@@ -596,12 +636,26 @@ ul.slick-dots .slick-active {
   html:has(.customize-support) .header_fixed {
     top: 32px !important;
   }
+  .feddbackform,
+  .feddbackform__group {
+    gap: 20px;
+  }
+  .feddbackform__group {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
 }
 @media (min-width: 1024px) {
   .section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 80px;
+    padding-left: 80px;
+    padding-right: 80px;
   }
   .page {
     padding: 55px 0 0;

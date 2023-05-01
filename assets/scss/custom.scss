@@ -300,7 +300,6 @@ html:has(.customize-support) .header_fixed {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border-radius: 10px;
   .portfolio-gallery-item__pic {
     position: relative;
     img {
@@ -429,6 +428,36 @@ ul.slick-dots {
   }
 }
 
+// start  feddbackform
+.feddbackform,
+.feddbackform__group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.feddbackform {
+  .feddbackform-item__label {
+    margin-bottom: 7px;
+  }
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 18px;
+    outline: none;
+  }
+  select {
+    cursor: pointer;
+  }
+}
+input[type='submit'] {
+  cursor: pointer;
+  background-color: $color5;
+  font-weight: 600;
+}
+// end  feddbackform
+
 // .reviews-slider {
 //   max-width: 600px;
 //   margin: 0 auto;
@@ -495,16 +524,24 @@ ul.slick-dots {
     font-size: 20px;
     margin-bottom: 10px;
   }
-
   .portfolio-gallery {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .block-technology,
+  .block-portfolio,
+  .block-reviews,
+  .block-feddbackform {
+    padding-top: 50px;
+    padding-bottom: 70px;
   }
 }
 
 // start 768px
 @media (min-width: 768px) {
   .section {
-    padding: 8px 60px;
+    padding-left: 60px;
+    padding-right: 60px;
   }
   .page {
     padding: 50px 0 0;
@@ -533,13 +570,23 @@ ul.slick-dots {
   html:has(.customize-support) .header_fixed {
     top: 32px !important;
   }
+
+  .feddbackform,
+  .feddbackform__group {
+    gap: 20px;
+  }
+  .feddbackform__group {
+    flex-direction: row;
+    align-items: flex-end;
+  }
 }
 // start 1024px
 @media (min-width: 1024px) {
   .section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 80px;
+    padding-left: 80px;
+    padding-right: 80px;
   }
   .page {
     padding: 55px 0 0;
