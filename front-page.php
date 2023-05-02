@@ -12,8 +12,12 @@
             <img src="<?= get_template_directory_uri() ?>/assets/img/img-05.png" alt="">
         </div>
         <div class="btns">
-            <div class="btns__order-site btn">Заказать сайт</div>
-            <div class="btns__order-rework btn">Заказать доработку сайта</div>
+            <div class="btns__order-site btn">
+                <a href="#feddbackform">Заказать сайт</a>
+            </div>
+            <div class="btns__order-rework btn">
+                <a href="#feddbackform">Заказать доработку сайта</a>
+            </div>
         </div>
     </div>
     <div class="block-technology section">
@@ -205,7 +209,7 @@
             </div>
         </div>
     </div>
-    <div class="block-feddbackform section">
+    <div class="block-feddbackform section" id="feddbackform">
         <div class="section__title">
             <h2>
                 Форма обратной связи
