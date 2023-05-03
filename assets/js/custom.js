@@ -87,6 +87,12 @@
 
     new WOW().init();
 
+    // start technology
+    $('.technology-item__progress span').each(function () {
+      $(this).css({ width: `${$(this).attr('data-level')}%` });
+    });
+    // end technology
+
     // END jQuery
   });
 })(jQuery);

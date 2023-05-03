@@ -289,36 +289,6 @@ footer .section {
   -webkit-box-shadow: 1px 2px 5px #000000 inset;
           box-shadow: 1px 2px 5px #000000 inset;
 }
-.technology-item__progress .html {
-  width: 80%;
-}
-.technology-item__progress .css {
-  width: 90%;
-}
-.technology-item__progress .scss {
-  width: 75%;
-}
-.technology-item__progress .flex-grid {
-  width: 75%;
-}
-.technology-item__progress .javascript {
-  width: 70%;
-}
-.technology-item__progress .php {
-  width: 50%;
-}
-.technology-item__progress .wp {
-  width: 70%;
-}
-.technology-item__progress .elementor {
-  width: 55%;
-}
-.technology-item__progress .acf {
-  width: 70%;
-}
-.technology-item__progress .figma {
-  width: 60%;
-}
 
 .page > .section {
   border-left: 1px solid #2a3256;

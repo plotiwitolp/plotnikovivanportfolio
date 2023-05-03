@@ -27,86 +27,33 @@
             </h2>
         </div>
         <div class="technology">
-            <div class="technology-item">
-                <div class="technology-item__title">
-                    HTML5
-                </div>
-                <div class="technology-item__progress">
-                    <span class="html wow animate__animated animate__fadeInLeft"></span>
-                </div>
-            </div>
-            <div class="technology-item">
-                <div class="technology-item__title">
-                    CSS3
-                </div>
-                <div class="technology-item__progress">
-                    <span class="css wow animate__animated animate__fadeInLeft"></span>
-                </div>
-            </div>
-            <div class="technology-item">
-                <div class="technology-item__title">
-                    SCSS
-                </div>
-                <div class="technology-item__progress">
-                    <span class="scss wow animate__animated animate__fadeInLeft"></span>
-                </div>
-            </div>
-            <div class="technology-item">
-                <div class="technology-item__title">
-                    FLEX/GRID
-                </div>
-                <div class="technology-item__progress">
-                    <span class="flex-grid wow animate__animated animate__fadeInLeft"></span>
-                </div>
-            </div>
-            <div class="technology-item">
-                <div class="technology-item__title">
-                    JavaScript
-                </div>
-                <div class="technology-item__progress ">
-                    <span class="javascript wow animate__animated animate__fadeInLeft"></span>
-                </div>
-            </div>
-            <div class="technology-item">
-                <div class="technology-item__title">
-                    PHP
-                </div>
-                <div class="technology-item__progress ">
-                    <span class="php wow animate__animated animate__fadeInLeft"></span>
-                </div>
-            </div>
-            <div class="technology-item">
-                <div class="technology-item__title">
-                    WordPress
-                </div>
-                <div class="technology-item__progress ">
-                    <span class="wp wow animate__animated animate__fadeInLeft"></span>
-                </div>
-            </div>
-            <div class="technology-item">
-                <div class="technology-item__title">
-                    Elementor
-                </div>
-                <div class="technology-item__progress ">
-                    <span class="elementor wow animate__animated animate__fadeInLeft"></span>
-                </div>
-            </div>
-            <div class="technology-item">
-                <div class="technology-item__title">
-                    ACF
-                </div>
-                <div class="technology-item__progress ">
-                    <span class="acf wow animate__animated animate__fadeInLeft"></span>
-                </div>
-            </div>
-            <div class="technology-item">
-                <div class="technology-item__title">
-                    Figma
-                </div>
-                <div class="technology-item__progress ">
-                    <span class="figma wow animate__animated animate__fadeInLeft"></span>
-                </div>
-            </div>
+
+            <?php
+            $args = [
+                'post_type' => 'technology',
+                'order' => 'ASC',
+            ];
+            $query = new WP_Query($args);
+            if ($query->have_posts()) {
+                while ($query->have_posts()) {
+                    $query->the_post();
+                    $level_of_technology_proficiency = get_field('level_of_technology_proficiency');
+            ?>
+                    <div class="technology-item">
+                        <div class="technology-item__title">
+                            <?php the_title(); ?>
+                        </div>
+                        <div class="technology-item__progress">
+                            <span data-level="<?php echo $level_of_technology_proficiency ?>" class="html wow animate__animated animate__fadeInLeft"></span>
+                        </div>
+                    </div>
+            <?php
+                }
+                wp_reset_postdata();
+            } else {
+                echo 'К сожалени, в ни одной технологии пока ещё нет.';
+            }
+            ?>
         </div>
     </div>
     <div class="block-portfolio section">

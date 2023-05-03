@@ -70,11 +70,31 @@ function create_reviews_post_type()
             ),
             'supports' => array('title', 'editor', 'thumbnail'),
             'rewrite' => array('slug' => 'reviews'),
+            'menu_position'      => 6,
+        )
+    );
+}
+function create_technology_post_type()
+{
+    register_post_type(
+        'technology',
+        array(
+            'public' => true,
+            'has_archive' => true,
+            'menu_icon' => 'dashicons-admin-generic',
+            'labels' => array(
+                'name' => __('Технологии'),
+                'singular_name' => __('Технология'),
+                'add_new' => __('Добавить новую технологию'),
+            ),
+            'supports' => array('title', 'editor', 'thumbnail'),
+            'rewrite' => array('slug' => 'technology'),
             'menu_position'      => 5,
         )
     );
 }
 add_action('init', 'create_portfolio_post_type');
+add_action('init', 'create_technology_post_type');
 add_action('init', 'create_reviews_post_type');
 
 
