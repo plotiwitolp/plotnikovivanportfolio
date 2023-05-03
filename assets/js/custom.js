@@ -78,6 +78,15 @@
     }
     // end functions
 
+    $('.btns__order-rework').on('click', function () {
+      $('select.wpcf7-form-control option[value="Доработка сайта"]').prop('selected', true);
+    });
+    $('.btns__order-site').on('click', function () {
+      $('select.wpcf7-form-control option[value="Создание сайта-визитки"]').prop('selected', true);
+    });
+
+    new WOW().init();
+
     // END jQuery
   });
 })(jQuery);

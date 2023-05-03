@@ -23,7 +23,7 @@
     <div class="block-technology section">
         <div class="section__title">
             <h2>
-                Уровени владения технологиями
+                Уровни владения технологиями
             </h2>
         </div>
         <div class="technology">
@@ -32,7 +32,7 @@
                     HTML5
                 </div>
                 <div class="technology-item__progress">
-                    <span class="html"></span>
+                    <span class="html wow animate__animated animate__fadeInLeft"></span>
                 </div>
             </div>
             <div class="technology-item">
@@ -40,7 +40,7 @@
                     CSS3
                 </div>
                 <div class="technology-item__progress">
-                    <span class="css"></span>
+                    <span class="css wow animate__animated animate__fadeInLeft"></span>
                 </div>
             </div>
             <div class="technology-item">
@@ -48,7 +48,7 @@
                     SCSS
                 </div>
                 <div class="technology-item__progress">
-                    <span class="scss"></span>
+                    <span class="scss wow animate__animated animate__fadeInLeft"></span>
                 </div>
             </div>
             <div class="technology-item">
@@ -56,7 +56,7 @@
                     FLEX/GRID
                 </div>
                 <div class="technology-item__progress">
-                    <span class="flex-grid"></span>
+                    <span class="flex-grid wow animate__animated animate__fadeInLeft"></span>
                 </div>
             </div>
             <div class="technology-item">
@@ -64,7 +64,7 @@
                     JavaScript
                 </div>
                 <div class="technology-item__progress ">
-                    <span class="javascript"></span>
+                    <span class="javascript wow animate__animated animate__fadeInLeft"></span>
                 </div>
             </div>
             <div class="technology-item">
@@ -72,7 +72,7 @@
                     PHP
                 </div>
                 <div class="technology-item__progress ">
-                    <span class="php"></span>
+                    <span class="php wow animate__animated animate__fadeInLeft"></span>
                 </div>
             </div>
             <div class="technology-item">
@@ -80,7 +80,7 @@
                     WordPress
                 </div>
                 <div class="technology-item__progress ">
-                    <span class="wp"></span>
+                    <span class="wp wow animate__animated animate__fadeInLeft"></span>
                 </div>
             </div>
             <div class="technology-item">
@@ -88,7 +88,7 @@
                     Elementor
                 </div>
                 <div class="technology-item__progress ">
-                    <span class="elementor"></span>
+                    <span class="elementor wow animate__animated animate__fadeInLeft"></span>
                 </div>
             </div>
             <div class="technology-item">
@@ -96,7 +96,7 @@
                     ACF
                 </div>
                 <div class="technology-item__progress ">
-                    <span class="acf"></span>
+                    <span class="acf wow animate__animated animate__fadeInLeft"></span>
                 </div>
             </div>
             <div class="technology-item">
@@ -104,7 +104,7 @@
                     Figma
                 </div>
                 <div class="technology-item__progress ">
-                    <span class="figma"></span>
+                    <span class="figma wow animate__animated animate__fadeInLeft"></span>
                 </div>
             </div>
         </div>
@@ -127,7 +127,7 @@
                 while ($query->have_posts()) {
                     $query->the_post();
             ?>
-                    <div class="portfolio-gallery-item">
+                    <div class="portfolio-gallery-item wow animate__animated animate__fadeInRight">
                         <div class="portfolio-gallery-item__title"><?= get_the_title() ?></div>
                         <?php if (has_post_thumbnail()) : ?>
                             <div class="portfolio-gallery-item__pic">

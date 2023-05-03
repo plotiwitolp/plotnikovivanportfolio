@@ -16,27 +16,30 @@
                     while ($query->have_posts()) {
                         $query->the_post();
                 ?>
-                        <a href="<?php the_permalink() ?>">
-                            <div class="portfolio-list__item">
-                                <h2><?= get_the_title() ?> </h2>
-                                <div><?= get_the_content() ?> </div>
-                            </div>
-
-                            <?php
-                            if (has_post_thumbnail()) : ?>
-                                <div class="post-thumbnail">
-                                    <?php the_post_thumbnail(); ?>
+                        <div class="portfolio-list__item">
+                            <a href="<?php the_permalink() ?>">
+                                <div class="portfolio-list__item-inner">
+                                    <h2><?= get_the_title() ?></h2>
+                                    <?php
+                                    if (has_post_thumbnail()) { ?>
+                                        <div class="post-thumbnail">
+                                            <?php the_post_thumbnail(); ?>
+                                        </div>
+                                    <?php  } ?>
+                                    <div><?= get_the_content() ?></div>
                                 </div>
-                        </a>
+                            </a>
+                        </div>
+
                         <?php
                         ?>
-            <?php endif;
-                        }
-                        wp_reset_postdata();
-                    } else {
-                        echo 'К сожалени, в портфолио пока ничего нет.';
+                <?php
                     }
-            ?>
+                    wp_reset_postdata();
+                } else {
+                    echo 'К сожалени, в портфолио пока ничего нет.';
+                }
+                ?>
             </div>
         </div>
     </div>
