@@ -427,6 +427,25 @@ input[type='submit'] {
 }
 // end  feddbackform
 
+.reviews-slider-item-btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: -30px;
+}
+.reviews-slider-item-btns__item {
+  min-width: 120px;
+  a {
+    display: block;
+    padding: 10px 22px;
+    background-color: $color5;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
 // .reviews-slider {
 //   max-width: 600px;
 //   margin: 0 auto;
@@ -562,6 +581,13 @@ input[type='submit'] {
   .feddbackform__group {
     flex-direction: row;
     align-items: flex-end;
+  }
+
+  .reviews-slider-item-btns {
+    gap: 10px;
+  }
+  .reviews-slider-item-btns__item a {
+    font-size: 12px;
   }
 }
 // start 1024px

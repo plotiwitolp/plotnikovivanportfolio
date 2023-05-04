@@ -41,6 +41,12 @@
             ?>
                     <div class="technology-item">
                         <div class="technology-item__title">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <div class="technology-item__title-img">
+                                    <?php the_post_thumbnail(); ?>
+                                </div>
+                            <?php endif; ?>
+
                             <?php the_title(); ?>
                         </div>
                         <div class="technology-item__progress">
@@ -80,7 +86,6 @@
                             <div class="portfolio-gallery-item__pic">
                                 <?php the_post_thumbnail(); ?>
                             </div>
-
                         <?php endif; ?>
 
                         <div class="portfolio-gallery-item__desc">
@@ -101,14 +106,6 @@
             ?>
 
         </div>
-        <!-- <div class="portfolio-slider-btns">
-            <div class="portfolio-slider-btns__prev">
-                <i class="fa fa-chevron-left" aria-hidden="true"></i>
-            </div>
-            <div class="portfolio-slider-btns__next">
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            </div>
-        </div> -->
 
     </div>
     <div class="block-reviews section">
@@ -121,22 +118,38 @@
             <?php
             $args = array(
                 'post_type' => 'reviews',
-                'posts_per_page' => 10
+                // 'posts_per_page' => 10
             );
             $query = new WP_Query($args);
             if ($query->have_posts()) {
                 while ($query->have_posts()) {
                     $query->the_post();
+
+                    $project_link = get_field('project_link');
             ?>
                     <div class="reviews-slider-item">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <div class="reviews-slider-item__pic">
-                                <?php the_post_thumbnail(); ?>
-                            </div>
+                        <div class="reviews-slider-item-inner">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <div class="reviews-slider-item__pic">
+                                    <?php the_post_thumbnail(); ?>
+                                </div>
 
-                        <?php endif; ?>
-                        <div class="reviews-slider-item__desc">
-                            <?= get_the_content() ?>
+                            <?php endif; ?>
+                            <div class="reviews-slider-item__desc">
+                                <?= get_the_content() ?>
+                            </div>
+                            <div class="reviews-slider-item-btns">
+                                <div class="reviews-slider-item-btns__item">
+                                    <a href="<?php echo get_field('src_link') ?>" target="_blank">
+                                        источник
+                                    </a>
+                                </div>
+                                <div class="reviews-slider-item-btns__item">
+                                    <a href="<?php echo $project_link->guid ?>">
+                                        проект
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
             <?php
