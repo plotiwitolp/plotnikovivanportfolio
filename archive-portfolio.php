@@ -3,7 +3,7 @@
     <div class="section">
         <div class="portfolio">
             <div class="portfolio__title">
-                <h1>Общий шаблон</h1>
+                <h1>Портфолио Портфолио</h1>
             </div>
             <div class="portfolio-list">
                 <?php

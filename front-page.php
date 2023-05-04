@@ -23,7 +23,7 @@
     <div class="block-technology section">
         <div class="section__title">
             <h2>
-                Уровни владения технологиями
+                Технологии
             </h2>
         </div>
         <div class="technology">
@@ -32,6 +32,8 @@
             $args = [
                 'post_type' => 'technology',
                 'order' => 'ASC',
+                'post_per_page' => 10,
+                'posts_per_archive_page' => 10,
             ];
             $query = new WP_Query($args);
             if ($query->have_posts()) {
@@ -89,7 +91,8 @@
                         <?php endif; ?>
 
                         <div class="portfolio-gallery-item__desc">
-                            <?= get_the_content() ?>
+                            <?php // echo get_the_content() 
+                            ?>
                         </div>
                         <div class="portfolio-gallery-item__more">
                             <a href="<?= get_permalink(); ?>">

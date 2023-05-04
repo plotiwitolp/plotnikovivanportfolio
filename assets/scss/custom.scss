@@ -117,7 +117,7 @@ h1 {
 
 h2 {
   margin: 10px 0 25px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.07em;
 }
 
@@ -215,13 +215,14 @@ footer .section {
   display: flex;
   flex-direction: column;
   width: calc(50% - 20px);
-  background-color: $color4;
+  background-color: $color1;
   color: #fff;
   padding: 7px 10px;
 }
 .technology-item__title {
   font-size: 18px;
   font-weight: 600;
+  text-align: center;
 }
 .technology-item__progress {
   margin: 10px 0 10px;
@@ -271,6 +272,7 @@ html:has(.customize-support) .header_fixed {
   overflow: hidden;
   .portfolio-gallery-item__pic {
     position: relative;
+    filter: blur(2px);
     img {
       transition-property: transform;
       transition-duration: 0.38s;
@@ -329,15 +331,16 @@ html:has(.customize-support) .header_fixed {
     line-height: 30px;
     border-radius: 3px;
     font-weight: 700;
+    box-shadow: 0 0 60px 20px;
   }
 }
 .portfolio-gallery-item {
   &:hover {
     .portfolio-gallery-item__title {
-      top: -50px;
+      // top: -50px;
     }
     .portfolio-gallery-item__desc {
-      bottom: -100px;
+      // bottom: -100px;
     }
     .portfolio-gallery-item__more {
       bottom: calc(50% - 15px);
@@ -424,6 +427,8 @@ input[type='submit'] {
   cursor: pointer;
   background-color: $color5;
   font-weight: 600;
+  max-width: 300px;
+  float: right;
 }
 // end  feddbackform
 
@@ -444,6 +449,22 @@ input[type='submit'] {
     font-weight: 700;
     text-align: center;
   }
+}
+
+.technology-item__title-img {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.portfolio-list__item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 // .reviews-slider {
@@ -523,6 +544,20 @@ input[type='submit'] {
     padding-top: 50px;
     padding-bottom: 70px;
   }
+
+  .portfolio-list__item-body {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 22px;
+  }
+  .post-thumbnail {
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
+    max-width: 380px;
+  }
 }
 
 .portfolio-list {
@@ -535,8 +570,15 @@ input[type='submit'] {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 20px 30px;
+  border: 1px solid #2a3256;
+  border-radius: 10px;
+  transition: box-shadow 0.25s ease-in-out;
   img {
     margin: 0;
+  }
+  &:hover {
+    box-shadow: 0 0 20px #00000094;
   }
 }
 
@@ -580,7 +622,6 @@ input[type='submit'] {
   }
   .feddbackform__group {
     flex-direction: row;
-    align-items: flex-end;
   }
 
   .reviews-slider-item-btns {

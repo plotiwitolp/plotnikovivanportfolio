@@ -41,7 +41,7 @@ function create_portfolio_post_type()
         'portfolio',
         array(
             'public' => true,
-            // 'has_archive' => true,
+            'has_archive' => true,
             'menu_icon' => 'dashicons-portfolio',
             'labels' => array(
                 'name' => __('Портфолио'),
@@ -49,7 +49,7 @@ function create_portfolio_post_type()
                 'add_new' => __('Добавить новое портфолио'),
             ),
             'supports' => array('title', 'editor', 'thumbnail', 'tag'),
-            // 'rewrite' => array('slug' => 'portfolio'),
+            'rewrite' => array('slug' => 'portfolio'),
             'menu_position'      => 4,
             'taxonomies' => array('post_tag')
         )
@@ -118,3 +118,18 @@ function remove_comments_menu()
 add_action('admin_menu', 'remove_comments_menu');
 
 // end remove excess from the admin panel
+
+
+
+// start пагинация
+function custom_posts_per_page($query)
+{
+    if (is_post_type_archive('portfolio')) {
+        $query->set('posts_per_page', 4);
+    } elseif (is_post_type_archive('reviews')) {
+        $query->set('posts_per_page', 2);
+    }
+}
+add_action('pre_get_posts', 'custom_posts_per_page');
+
+// end пагинация
