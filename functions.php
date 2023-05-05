@@ -124,9 +124,9 @@ add_action('admin_menu', 'remove_comments_menu');
 // start пагинация
 function custom_posts_per_page($query)
 {
-    if (is_post_type_archive('portfolio')) {
+    if (!is_admin() && is_post_type_archive('portfolio')) {
         $query->set('posts_per_page', 4);
-    } elseif (is_post_type_archive('reviews')) {
+    } elseif (!is_admin() && is_post_type_archive('reviews')) {
         $query->set('posts_per_page', 2);
     }
 }

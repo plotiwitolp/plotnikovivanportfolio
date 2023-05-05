@@ -3,17 +3,17 @@
     console.log('jquery is working...');
     // START jQuery
 
-    let isScroll = 0,
-      targetScroll = 32;
-    $(window).on('scroll', function () {
-      if (isScroll === 0 && $(this).scrollTop() >= targetScroll) {
-        isScroll = 1;
-        faAngleDown();
-      } else if (isScroll === 1 && $(this).scrollTop() < targetScroll) {
-        isScroll = 0;
-        faAngleUp();
-      }
-    });
+    // let isScroll = 0,
+    //   targetScroll = 32;
+    // $(window).on('scroll', function () {
+    //   if (isScroll === 0 && $(this).scrollTop() >= targetScroll) {
+    //     isScroll = 1;
+    //     faAngleDown();
+    //   } else if (isScroll === 1 && $(this).scrollTop() < targetScroll) {
+    //     isScroll = 0;
+    //     faAngleUp();
+    //   }
+    // });
 
     $('.collapse').on('click', function () {
       if ($('.header__inner').hasClass('header__inner_hide')) {

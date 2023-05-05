@@ -25,10 +25,17 @@
                     ]); ?>
                 </nav>
 
-                <div class="collapse">
+                <!--  -->
+                <div class="header__nav-mob">
+                    <div class="header__nav-mob__open"></div>
+                    <div class="header__nav-mob__close"></div>
+                </div>
+                <!-- <div class="collapse">
                     <i class="fa fa-angle-up collapse_active" aria-hidden="true"></i>
                     <i class="fa fa-angle-down" aria-hidden="true"></i>
-                </div>
+                </div> -->
+                <!--  -->
+
             </div>
         </div>
         <!-- остановился на 45 минуте -->

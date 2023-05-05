@@ -68,6 +68,10 @@
         <div class="section__title">
             <h2>
                 Портфолио
+                <a href="./portfolio">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+
             </h2>
         </div>
         <!-- <div class="portfolio-slider"> -->
@@ -75,7 +79,7 @@
             <?php
             $args = array(
                 'post_type' => 'portfolio',
-                'posts_per_page' => 10
+                'posts_per_page' => 4
             );
             $query = new WP_Query($args);
             if ($query->have_posts()) {

@@ -29,6 +29,7 @@ img {
   .header__inner {
     min-height: 30px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 }
@@ -47,25 +48,40 @@ img {
 }
 
 .header__nav {
-  display: flex;
-  align-items: center;
-  #menu-verhnee-menyu {
-    display: flex;
-    justify-content: center;
-    .menu-item {
-      margin-right: 3px;
-      font-size: 12px;
-      padding: 3px 4px;
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  background-color: #3d5995;
+  .menu-verhnee-menyu-container {
+    height: 100%;
+    #menu-verhnee-menyu {
+      height: 100%;
       display: flex;
-      justify-content: center;
-      background-color: $color4;
-      color: $color2;
-      border-radius: $bradius1;
-      letter-spacing: 0.04em;
-    }
-    .current-menu-item {
-      background-color: $color2;
-      color: $color4;
+      padding-top: 50px;
+      flex-direction: column;
+      align-items: center;
+      .menu-item {
+        width: 320px;
+      }
+      .menu-item a {
+        margin-bottom: 20px;
+        font-size: 20px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        background-color: $color4;
+        color: $color2;
+        border-radius: $bradius1;
+        letter-spacing: 0.04em;
+      }
+      .current-menu-item a {
+        background-color: $color2;
+        color: $color4;
+      }
     }
   }
 }
@@ -119,6 +135,9 @@ h2 {
   margin: 10px 0 25px;
   font-weight: 700;
   line-height: 1.07em;
+  i.fa {
+    font-size: 16px;
+  }
 }
 
 .post-thumbnail {
@@ -465,6 +484,49 @@ input[type='submit'] {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.header__nav-mob__open {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  &::after {
+    content: '';
+    display: block;
+    height: 6px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 12px 0 0px #fff, 0 24px 0 0px #fff;
+    border-radius: 5px;
+  }
+}
+.header__nav-mob__close {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+  &::before {
+    transform: rotate(45deg);
+    margin-left: -15px;
+    margin-top: -3px;
+  }
+  &::after {
+    transform: rotate(-45deg);
+    margin-left: -15px;
+    margin-top: -3px;
+  }
 }
 
 // .reviews-slider {
