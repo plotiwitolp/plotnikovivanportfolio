@@ -27,7 +27,7 @@
 
                 <!--  -->
                 <div class="header__nav-mob">
-                    <div class="header__nav-mob__open"></div>
+                    <div class="header__nav-mob__open nav-mob_active"></div>
                     <div class="header__nav-mob__close"></div>
                 </div>
                 <!-- <div class="collapse">

@@ -6,6 +6,7 @@
             <div class="about__desc">
                 <div class="about__whoami">Я - частный вебместер</div>
                 <div class="about__whatido">Создаю сайты, занимаюсь их доработками и исправлениями.</div>
+                <div class="about__worktime">График работы: 24/7</div>
             </div>
         </div>
         <div class="mypic">
@@ -67,8 +68,8 @@
     <div class="block-portfolio section">
         <div class="section__title">
             <h2>
-                Портфолио
                 <a href="./portfolio">
+                    Портфолио
                     <i class="fa fa-chevron-right" aria-hidden="true"></i>
                 </a>
 

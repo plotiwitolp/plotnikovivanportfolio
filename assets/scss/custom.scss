@@ -47,14 +47,15 @@ img {
   }
 }
 
+// start menu
 .header__nav {
-  display: none;
+  right: -250%;
+  transition: right 0.35s ease-in-out;
   position: absolute;
-  left: 0;
-  right: 0;
   top: 0;
   bottom: 0;
   height: 100vh;
+  width: calc(100% + 100px);
   background-color: #3d5995;
   .menu-verhnee-menyu-container {
     height: 100%;
@@ -85,6 +86,60 @@ img {
     }
   }
 }
+.header__nav_active {
+  right: -50px;
+}
+.header__nav-mob__open,
+.header__nav-mob__close {
+  display: none;
+  z-index: 1;
+}
+.header__nav-mob__open {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  &::after {
+    content: '';
+    display: block;
+    height: 6px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 12px 0 0px #fff, 0 24px 0 0px #fff;
+    border-radius: 5px;
+  }
+}
+.header__nav-mob__close {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+  &::before {
+    transform: rotate(45deg);
+    margin-left: -15px;
+    margin-top: -3px;
+  }
+  &::after {
+    transform: rotate(-45deg);
+    margin-left: -15px;
+    margin-top: -3px;
+  }
+}
+.nav-mob_active {
+  display: block;
+}
+// end menu
 
 .collapse {
   display: flex;
@@ -486,48 +541,23 @@ input[type='submit'] {
   gap: 12px;
 }
 
-.header__nav-mob__open {
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  &::after {
-    content: '';
-    display: block;
-    height: 6px;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 12px 0 0px #fff, 0 24px 0 0px #fff;
-    border-radius: 5px;
-  }
+// start single
+.single {
+  margin-bottom: 40px;
 }
-.header__nav-mob__close {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  &::after,
-  &::before {
-    content: '';
-    display: block;
-    width: 30px;
-    height: 6px;
-    background-color: #fff;
-    border-radius: 5px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-  }
-  &::before {
-    transform: rotate(45deg);
-    margin-left: -15px;
-    margin-top: -3px;
-  }
-  &::after {
-    transform: rotate(-45deg);
-    margin-left: -15px;
-    margin-top: -3px;
-  }
+.single__breadcrumbs {
+  margin: 10px 0 20px;
 }
+.single__img {
+  max-width: 350px;
+}
+.single__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+}
+// end single
 
 // .reviews-slider {
 //   max-width: 600px;
@@ -634,7 +664,7 @@ input[type='submit'] {
   align-items: flex-start;
   padding: 20px 30px;
   border: 1px solid #2a3256;
-  border-radius: 10px;
+  // border-radius: 10px;
   transition: box-shadow 0.25s ease-in-out;
   img {
     margin: 0;

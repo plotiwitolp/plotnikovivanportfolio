@@ -93,6 +93,24 @@
     });
     // end technology
 
+    // start menu
+    $('.header__nav-mob').on('click', function () {
+      $(this).find('div').toggleClass('nav-mob_active');
+      if ($('.header__nav-mob__open').hasClass('nav-mob_active')) {
+        $('.header__nav').removeClass('header__nav_active');
+      } else {
+        $('.header__nav').addClass('header__nav_active');
+      }
+    });
+    // end menu
+
+    // start single
+    $('.single__bottom p').slick({
+      prevArrow: $('.single-slider-btns__prev'),
+      nextArrow: $('.single-slider-btns__next'),
+    });
+    // end single
+
     // END jQuery
   });
 })(jQuery);
