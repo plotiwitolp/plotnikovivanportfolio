@@ -8,6 +8,11 @@ body {
 
 @import 'vars';
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-block-start: 62px;
+}
+
 body {
   min-width: 320px;
   overflow-x: hidden;
@@ -221,7 +226,7 @@ h2 {
   }
 }
 .about__desc {
-  width: 145px;
+  width: 190px;
 }
 .mypic {
   width: 185px;
@@ -408,27 +413,7 @@ html:has(.customize-support) .header_fixed {
     box-shadow: 0 0 60px 20px;
   }
 }
-.portfolio-gallery-item {
-  &:hover {
-    .portfolio-gallery-item__title {
-      // top: -50px;
-    }
-    .portfolio-gallery-item__desc {
-      // bottom: -100px;
-    }
-    .portfolio-gallery-item__more {
-      bottom: calc(50% - 15px);
-    }
-    .portfolio-gallery-item__pic {
-      img {
-        transform: scale(1.2);
-      }
-      &::after {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 38%, rgba(0, 0, 0, 0.1) 62%, rgba(0, 0, 0, 1) 100%);
-      }
-    }
-  }
-}
+
 // end portfolio
 
 .reviews-slider-btns {
@@ -526,8 +511,8 @@ input[type='submit'] {
 }
 
 .technology-item__title-img {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   margin: auto;
   margin-bottom: 10px;
   margin-top: 14px;
@@ -560,12 +545,45 @@ input[type='submit'] {
 // end single
 
 // START @MEDIA ==================================
+@media (hover: hover) {
+  .portfolio-gallery-item:hover {
+    .portfolio-gallery-item__more {
+      bottom: calc(50% - 15px);
+    }
+    .portfolio-gallery-item__pic {
+      img {
+        transform: scale(1.2);
+      }
+      &::after {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 38%, rgba(0, 0, 0, 0.1) 62%, rgba(0, 0, 0, 1) 100%);
+      }
+    }
+  }
+
+  .portfolio-list__item-inner:hover {
+    box-shadow: 0 0 20px #00000094;
+  }
+}
+@media (hover: none) {
+  .portfolio-gallery-item {
+    .portfolio-gallery-item__more {
+      bottom: calc(50% - 15px);
+    }
+    .portfolio-gallery-item__pic {
+      &::after {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 38%, rgba(0, 0, 0, 0.1) 62%, rgba(0, 0, 0, 1) 100%);
+      }
+    }
+  }
+}
+
 // start 360px
 @media (min-width: 360px) {
   .mypic {
     width: 235px;
   }
 }
+
 // start 470px
 @media (min-width: 470px) {
   .mypic {
@@ -576,7 +594,12 @@ input[type='submit'] {
   .about__desc {
     width: 220px;
   }
+  .technology-item__title-img {
+    width: 100px;
+    height: 100px;
+  }
 }
+
 // start 640px
 @media (min-width: 640px) {
   .section {
@@ -664,9 +687,6 @@ input[type='submit'] {
   img {
     margin: 0;
   }
-  &:hover {
-    box-shadow: 0 0 20px #00000094;
-  }
 }
 
 // start 768px
@@ -687,6 +707,7 @@ input[type='submit'] {
   }
   .about__greet {
     margin-bottom: 30px;
+    font-size: 42px;
   }
   .about__desc {
     width: 340px;
@@ -697,6 +718,7 @@ input[type='submit'] {
     margin-bottom: 20px;
   }
 }
+
 // start 783px
 @media (min-width: 783px) {
   html:has(.customize-support) .header_fixed {
@@ -718,6 +740,7 @@ input[type='submit'] {
     font-size: 12px;
   }
 }
+
 // start 1024px
 @media (min-width: 1024px) {
   .section {

@@ -3,18 +3,6 @@
     console.log('jquery is working...');
     // START jQuery
 
-    // let isScroll = 0,
-    //   targetScroll = 32;
-    // $(window).on('scroll', function () {
-    //   if (isScroll === 0 && $(this).scrollTop() >= targetScroll) {
-    //     isScroll = 1;
-    //     faAngleDown();
-    //   } else if (isScroll === 1 && $(this).scrollTop() < targetScroll) {
-    //     isScroll = 0;
-    //     faAngleUp();
-    //   }
-    // });
-
     $('.collapse').on('click', function () {
       if ($('.header__inner').hasClass('header__inner_hide')) {
         faAngleUp();
@@ -23,12 +11,6 @@
       }
     });
 
-    // $('.portfolio-slider').slick({
-    //   prevArrow: $('.portfolio-slider-btns__prev'),
-    //   nextArrow: $('.portfolio-slider-btns__next'),
-    //   slidesToShow: 1,
-    //   dots: true,
-    // });
     $('.reviews-slider').slick({
       prevArrow: $('.reviews-slider-btns__prev'),
       nextArrow: $('.reviews-slider-btns__next'),
