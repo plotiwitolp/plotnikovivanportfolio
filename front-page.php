@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="mypic">
-                <img src="<?= get_template_directory_uri() ?>/assets/img/img-05.png" alt="">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/img-05.png" alt="">
             </div>
             <div class="btns">
                 <div class="btns__order-site btn">
@@ -32,12 +32,12 @@
     <div class="block-portfolio section">
         <section>
             <div class="section__title">
-                <a href="./portfolio">
-                    <h2>
+                <h2>
+                    <a href="./portfolio">
                         Портфолио
                         <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                    </h2>
-                </a>
+                    </a>
+                </h2>
             </div>
             <!-- <div class="portfolio-slider"> -->
             <div class="portfolio-gallery">
@@ -54,7 +54,7 @@
                         <div class="portfolio-gallery-item wow animate__animated animate__fadeInRight">
                             <div class="portfolio-gallery-item__title">
                                 <h3>
-                                    <?= get_the_title() ?>
+                                    <?php echo get_the_title() ?>
                                 </h3>
                             </div>
                             <?php if (has_post_thumbnail()) : ?>
@@ -68,7 +68,7 @@
                                 ?>
                             </div>
                             <div class="portfolio-gallery-item__more">
-                                <a href="<?= get_permalink(); ?>">
+                                <a href="<?php echo get_permalink(); ?>">
                                     Подробнее
                                 </a>
                             </div>
@@ -142,7 +142,7 @@
                     Отзывы
                 </h2>
             </div>
-            <div class="reviews-slider">
+            <ul class="reviews-slider">
                 <?php
                 $args = array(
                     'post_type' => 'reviews',
@@ -155,30 +155,42 @@
 
                         $project_link = get_field('project_link');
                 ?>
-                        <div class="reviews-slider-item">
-                            <div class="reviews-slider-item-inner">
-                                <?php if (has_post_thumbnail()) : ?>
-                                    <div class="reviews-slider-item__pic">
-                                        <?php the_post_thumbnail(); ?>
+                        <li>
+                            <blockquote>
+                                <div class="reviews-slider-item">
+                                    <div class="reviews-slider-item-inner">
+                                        <cite>
+                                            <?php the_field('owner_name') ?>
+                                        </cite>
+                                        <time datetime=""><?php the_field('publication_date'); ?></time>
+
+                                        <?php if (has_post_thumbnail()) : ?>
+                                            <div class="reviews-slider-item__pic">
+                                                <?php the_post_thumbnail(); ?>
+                                            </div>
+                                        <?php endif; ?>
+
+                                        <div class="reviews-slider-item__desc">
+                                            <p>
+                                                <?php echo get_the_content() ?>
+                                            </p>
+                                        </div>
+                                        <div class="reviews-slider-item-btns">
+                                            <div class="reviews-slider-item-btns__item">
+                                                <a href="<?php echo get_field('src_link') ?>" target="_blank">
+                                                    источник
+                                                </a>
+                                            </div>
+                                            <div class="reviews-slider-item-btns__item">
+                                                <a href="<?php echo $project_link->guid ?>">
+                                                    проект
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                <?php endif; ?>
-                                <div class="reviews-slider-item__desc">
-                                    <?= get_the_content() ?>
                                 </div>
-                                <div class="reviews-slider-item-btns">
-                                    <div class="reviews-slider-item-btns__item">
-                                        <a href="<?php echo get_field('src_link') ?>" target="_blank">
-                                            источник
-                                        </a>
-                                    </div>
-                                    <div class="reviews-slider-item-btns__item">
-                                        <a href="<?php echo $project_link->guid ?>">
-                                            проект
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            </blockquote>
+                        </li>
                 <?php
                     }
                     wp_reset_postdata();
@@ -186,15 +198,18 @@
                     echo 'К сожалению, отзывов пока нет.';
                 }
                 ?>
-
-            </div>
+            </ul>
             <div class="reviews-slider-btns">
-                <div class="reviews-slider-btns__prev">
-                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                </div>
-                <div class="reviews-slider-btns__next">
-                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                </div>
+                <button>
+                    <div class="reviews-slider-btns__prev">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </div>
+                </button>
+                <button>
+                    <div class="reviews-slider-btns__next">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
+                </button>
             </div>
         </section>
     </div>
