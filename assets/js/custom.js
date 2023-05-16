@@ -11,6 +11,11 @@
       }
     });
 
+    $('.portfolio-gallery').slick({
+      arrows: false,
+      dots: true,
+    });
+
     $('.reviews-slider').slick({
       prevArrow: $('.reviews-slider-btns__prev'),
       nextArrow: $('.reviews-slider-btns__next'),

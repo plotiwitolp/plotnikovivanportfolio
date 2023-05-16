@@ -11,7 +11,7 @@
 
 <body>
     <header class="header header_fixed">
-        <div class="section">
+        <div class="container">
             <div class="header__inner">
                 <div class="header__logo">
                     <?php if (function_exists('the_custom_logo')) {
@@ -19,24 +19,33 @@
                     } ?>
                 </div>
 
-                <nav class="header__nav">
-                    <?php wp_nav_menu([
-                        'theme_location'  => 'primary'
-                    ]); ?>
-                </nav>
+                <div class="info">
+                    <dl class="info__item">
+                        <dt class="info__label">Статус:</dt>
+                        <dd class="info__mode info__mode_on">свободен</dd>
+                    </dl>
+                    <dl class="info__item">
+                        <dt class="info__label">График работы:</dt>
+                        <dd class="info__mode">24/7</dd>
+                    </dl>
 
-                <!--  -->
-                <div class="header__nav-mob">
-                    <div class="header__nav-mob__open nav-mob_active"></div>
-                    <div class="header__nav-mob__close"></div>
+
                 </div>
-                <!-- <div class="collapse">
-                    <i class="fa fa-angle-up collapse_active" aria-hidden="true"></i>
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                </div> -->
-                <!--  -->
+
+                <div class="header__nav-wrapper">
+                    <nav class="header__nav">
+                        <?php wp_nav_menu([
+                            'theme_location'  => 'primary'
+                        ]); ?>
+                    </nav>
+                    <div class="header__nav-mob">
+                        <div class="header__nav-mob__open nav-mob_active"></div>
+                        <div class="header__nav-mob__close"></div>
+                    </div>
+                </div>
 
             </div>
         </div>
-        <!-- остановился на 45 минуте -->
     </header>
+
+    <main>

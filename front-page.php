@@ -1,91 +1,100 @@
 <?php get_header(); ?>
-<div class="page">
-    <div class="block-top section">
+
+<!-- TOP -->
+<div class="block-top">
+    <div class="container">
         <section>
-            <div class="about">
-                <div class="about__greet">
-                    <h1>
-                        Частный веб-мастер Иван Плотников <br>
-                        Заказать сайт или доработку сайта.
-                    </h1>
+            <div class="block-top__inner">
+                <div class="about">
+                    <div class="about__greet">
+                        <h1>
+                            Частный веб-мастер <span class="about__greet_accent">Иван Плотников</span>
+                            <span>Заказать сайт или доработку</span>
+                        </h1>
+                    </div>
                 </div>
-                <div class="about__desc">
-                    <div class="about__whoami">Приветствую! <br> Меня зовут Иван. Я - частный вебместер</div>
-                    <div class="about__whatido">Создаю сайты, занимаюсь их доработками и исправлениями.</div>
-                    <div class="about__worktime">График работы: 24/7</div>
+                <div class="mypic">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/img-05.png" alt="Частный веб-мастер Иван Плотников">
                 </div>
-            </div>
-            <div class="mypic">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/img-05.png" alt="">
-            </div>
-            <div class="btns">
-                <div class="btns__order-site btn">
-                    <a href="#feddbackform">Заказать сайт</a>
-                </div>
-                <div class="btns__order-rework btn">
-                    <a href="#feddbackform">Заказать доработку сайта</a>
+                <div class="btns">
+                    <div class="btns__order-site btn">
+                        <a href="#feddbackform">Заказать сайт</a>
+                    </div>
+                    <div class="btns__order-rework btn">
+                        <a href="#feddbackform">Заказать доработку сайта</a>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
+</div>
 
-    <div class="block-portfolio section">
+<!-- PORTFOLIO -->
+<div class="block-portfolio">
+    <div class="container">
         <section>
-            <div class="section__title">
-                <h2>
-                    <a href="./portfolio">
-                        Портфолио
-                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                    </a>
-                </h2>
-            </div>
-            <!-- <div class="portfolio-slider"> -->
-            <div class="portfolio-gallery">
-                <?php
-                $args = array(
-                    'post_type' => 'portfolio',
-                    'posts_per_page' => 4
-                );
-                $query = new WP_Query($args);
-                if ($query->have_posts()) {
-                    while ($query->have_posts()) {
-                        $query->the_post();
-                ?>
-                        <div class="portfolio-gallery-item wow animate__animated animate__fadeInRight">
-                            <div class="portfolio-gallery-item__title">
-                                <h3>
-                                    <?php echo get_the_title() ?>
-                                </h3>
-                            </div>
-                            <?php if (has_post_thumbnail()) : ?>
-                                <div class="portfolio-gallery-item__pic">
-                                    <?php the_post_thumbnail(); ?>
+            <div class="block-portfolio__inner">
+                <div class="section__title">
+                    <h2>
+                        <a href="./portfolio">
+                            Портфолио
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </a>
+                    </h2>
+                </div>
+                <!-- <div class="portfolio-slider"> -->
+                <div class="portfolio-gallery">
+                    <?php
+                    $args = array(
+                        'post_type' => 'portfolio',
+                        'posts_per_page' => 4
+                    );
+                    $query = new WP_Query($args);
+                    if ($query->have_posts()) {
+                        while ($query->have_posts()) {
+                            $query->the_post();
+                    ?>
+                            <div class="portfolio-gallery-item wow animate__animated animate__fadeInRight">
+                                <div class="portfolio-gallery-item__title">
+                                    <h3>
+                                        <?php echo get_the_title() ?>
+                                    </h3>
                                 </div>
-                            <?php endif; ?>
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <div class="portfolio-gallery-item__pic">
+                                        <?php the_post_thumbnail(); ?>
+                                    </div>
+                                <?php endif; ?>
 
-                            <div class="portfolio-gallery-item__desc">
-                                <?php // echo get_the_content() 
-                                ?>
+                                <div class="portfolio-gallery-item__desc">
+                                    <?php // echo get_the_content() 
+                                    ?>
+                                </div>
+                                <div class="portfolio-gallery-item__more">
+                                    <a href="<?php echo get_permalink(); ?>">
+                                        <span class="btn">
+                                            Подробнее
+                                        </span>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="portfolio-gallery-item__more">
-                                <a href="<?php echo get_permalink(); ?>">
-                                    Подробнее
-                                </a>
-                            </div>
-                        </div>
-                <?php
+                    <?php
+                        }
+                        wp_reset_postdata();
+                    } else {
+                        echo 'К сожалени, в портфолио пока ничего нет.';
                     }
-                    wp_reset_postdata();
-                } else {
-                    echo 'К сожалени, в портфолио пока ничего нет.';
-                }
-                ?>
+                    ?>
 
+                </div>
             </div>
         </section>
     </div>
+</div>
 
-    <div class="block-technology section">
+<!-- TECHNOLOGY -->
+<div class="block-technology">
+    <div class="container">
         <section>
             <div class="section__title">
                 <h2>
@@ -132,10 +141,11 @@
             </div>
         </section>
     </div>
+</div>
 
-
-
-    <div class="block-reviews section">
+<!-- REVIEWS -->
+<div class="block-reviews">
+    <div class="container">
         <section>
             <div class="section__title">
                 <h2>
@@ -213,9 +223,11 @@
             </div>
         </section>
     </div>
+</div>
 
-
-    <div class="block-feddbackform section" id="feddbackform">
+<!-- FEEDBACK FORM -->
+<div class="block-feddbackform" id="feddbackform">
+    <div class="container">
         <section>
             <div class="section__title">
                 <h2>
@@ -226,4 +238,7 @@
         </section>
     </div>
 </div>
+
+
+
 <?php get_footer(); ?>

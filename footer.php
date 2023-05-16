@@ -1,3 +1,4 @@
+</main>
 <footer class="footer">
     <div class="section">
         <div class="footer__item">
@@ -52,6 +53,19 @@
     </div>
 </footer>
 <?php wp_footer(); ?>
+<style>
+    html {
+        margin-top: 63px !important;
+    }
+
+    html:has(.customize-support) {
+        margin-top: 95px !important;
+    }
+
+    html:has(.customize-support) .header_fixed {
+        top: 32px;
+    }
+</style>
 </body>
 
 </html>
