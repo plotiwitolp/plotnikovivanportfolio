@@ -17,10 +17,14 @@
     });
 
     $('.reviews-slider').slick({
-      prevArrow: $('.reviews-slider-btns__prev'),
-      nextArrow: $('.reviews-slider-btns__next'),
+      arrows: false,
       slidesToShow: 3,
+      slidesToScroll: 3,
+      initialSlide: 1,
       dots: true,
+      centerMode: true,
+      focusOnSelect: true,
+      infinite: false,
       responsive: [
         {
           breakpoint: 1024,

@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="portfolio-gallery-item__more">
                                     <a href="<?php echo get_permalink(); ?>">
-                                        <span class="btn">
+                                        <span class="btn btn_medium">
                                             Подробнее
                                         </span>
                                     </a>
@@ -82,7 +82,7 @@
                         }
                         wp_reset_postdata();
                     } else {
-                        echo 'К сожалени, в портфолио пока ничего нет.';
+                        echo 'К сожалению, в портфолио пока ничего нет.';
                     }
                     ?>
 
@@ -107,8 +107,7 @@
                 $args = [
                     'post_type' => 'technology',
                     'order' => 'ASC',
-                    'post_per_page' => 10,
-                    'posts_per_archive_page' => 10,
+                    'posts_per_page' => 20,
                 ];
                 $query = new WP_Query($args);
                 if ($query->have_posts()) {
@@ -128,7 +127,10 @@
                                 </h3>
                             </div>
                             <div class="technology-item__progress">
-                                <span data-level="<?php echo $level_of_technology_proficiency ?>" class="html wow animate__animated animate__fadeInLeft"></span>
+                                <div class="technology-item-notice-line-wrapper">
+                                    <span data-level="<?php echo $level_of_technology_proficiency ?>" class="technology-item-notice-line html wow animate__animated animate__fadeInLeft animate__slow"></span>
+                                </div>
+                                <span class="technology-item-notice">Субъективная оценка владения технологией: <?php echo $level_of_technology_proficiency ?>%</span>
                             </div>
                         </div>
                 <?php
@@ -156,7 +158,7 @@
                 <?php
                 $args = array(
                     'post_type' => 'reviews',
-                    // 'posts_per_page' => 10
+                    'posts_per_page' => 30
                 );
                 $query = new WP_Query($args);
                 if ($query->have_posts()) {
@@ -169,34 +171,42 @@
                             <blockquote>
                                 <div class="reviews-slider-item">
                                     <div class="reviews-slider-item-inner">
-                                        <cite>
-                                            <?php the_field('owner_name') ?>
-                                        </cite>
-                                        <time datetime=""><?php the_field('publication_date'); ?></time>
-
-                                        <?php if (has_post_thumbnail()) : ?>
-                                            <div class="reviews-slider-item__pic">
-                                                <?php the_post_thumbnail(); ?>
-                                            </div>
-                                        <?php endif; ?>
+                                        <h3><?php the_title() ?></h3>
 
                                         <div class="reviews-slider-item__desc">
-                                            <p>
-                                                <?php echo get_the_content() ?>
-                                            </p>
+                                            <?php the_field('callback_text') ?>
                                         </div>
+
+                                        <div class="review-owner">
+                                            <div class="review-owner__top">
+                                                <cite><?php the_field('review_owner'); ?></cite>
+                                                <?php if (has_post_thumbnail()) : ?>
+                                                    <div class="reviews-slider-item__pic">
+                                                        <?php the_post_thumbnail(); ?>
+                                                    </div>
+                                                <?php endif; ?>
+                                            </div>
+                                            <time datetime="<?php the_field('publication_date'); ?>"><?php the_field('publication_date'); ?></time>
+                                        </div>
+
                                         <div class="reviews-slider-item-btns">
                                             <div class="reviews-slider-item-btns__item">
-                                                <a href="<?php echo get_field('src_link') ?>" target="_blank">
+                                                <a href="<?php echo get_field('src_link') ?>" target="_blank" class="btn btn_min">
                                                     источник
                                                 </a>
                                             </div>
-                                            <div class="reviews-slider-item-btns__item">
-                                                <a href="<?php echo $project_link->guid ?>">
-                                                    проект
-                                                </a>
-                                            </div>
+
+                                            <?php if ($project_link) { ?>
+                                                <div class="reviews-slider-item-btns__item">
+                                                    <a href="<?php echo $project_link->guid ?>" class="btn btn_min">
+                                                        проект
+                                                    </a>
+                                                </div>
+                                            <?php } ?>
+
+
                                         </div>
+
                                     </div>
                                 </div>
                             </blockquote>
@@ -209,18 +219,6 @@
                 }
                 ?>
             </ul>
-            <div class="reviews-slider-btns">
-                <button>
-                    <div class="reviews-slider-btns__prev">
-                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                    </div>
-                </button>
-                <button>
-                    <div class="reviews-slider-btns__next">
-                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                    </div>
-                </button>
-            </div>
         </section>
     </div>
 </div>

@@ -126,8 +126,8 @@ function custom_posts_per_page($query)
 {
     if (!is_admin() && is_post_type_archive('portfolio')) {
         $query->set('posts_per_page', 4);
-    } elseif (!is_admin() && is_post_type_archive('reviews')) {
-        $query->set('posts_per_page', 2);
+    } elseif (!is_admin() && is_post_type_archive('technology')) {
+        $query->set('posts_per_page', 20);
     }
 }
 add_action('pre_get_posts', 'custom_posts_per_page');
