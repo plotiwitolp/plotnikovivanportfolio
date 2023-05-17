@@ -1,9 +1,9 @@
 <?php get_header(); ?>
-<div class="page">
-    <div class="section">
-        <div class="single">
-            <div class="single__breadcrumbs">
-                Главная / Заголовок рубрики / Название поста
+<div class="single">
+    <div class="container">
+        <div class="single__inner">
+            <div class="breadcrumbs">
+                <?php if (function_exists('kama_breadcrumbs')) kama_breadcrumbs(' » '); ?>
             </div>
             <div class="single__title">
                 <h1>
@@ -13,7 +13,7 @@
             <div class="single__body">
                 <div class="single__top">
                     <div class="single__txt">
-                        <?php the_content(); ?>
+                        <?php the_field('full_description'); ?>
                     </div>
                     <div class="single__img">
                         <?php the_post_thumbnail() ?>

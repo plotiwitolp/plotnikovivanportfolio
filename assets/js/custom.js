@@ -95,12 +95,11 @@
     });
     // end menu
 
-    // start single
-    $('.single__bottom p').slick({
-      prevArrow: $('.single-slider-btns__prev'),
-      nextArrow: $('.single-slider-btns__next'),
+    lightbox.option({
+      resizeDuration: 300,
+      wrapAround: true,
+      albumLabel: 'Картинка %1 из %2',
     });
-    // end single
 
     // END jQuery
   });
