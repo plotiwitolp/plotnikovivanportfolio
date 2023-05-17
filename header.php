@@ -22,8 +22,18 @@
                 <div class="info">
                     <dl class="info__item">
                         <dt class="info__label">Статус:</dt>
-                        <dd class="info__mode info__mode_on">свободен</dd>
+                        <?php if (get_field('info__mode', 6)) { ?>
+                            <dd class="info__mode info__mode_on">свободен</dd>
+                        <?php } else { ?>
+                            <dd class="info__mode info__mode_off">занят</dd>
+                        <?php } ?>
                     </dl>
+                    <?php if (!get_field('info__mode', 6)) { ?>
+                        <dl class="info__item">
+                            <dt class="info__label">Освобожусь через:</dt>
+                            <dd class="info__mode"><?php the_field('will_be_free', 6) ?></dd>
+                        </dl>
+                    <?php } ?>
                     <dl class="info__item">
                         <dt class="info__label">График работы:</dt>
                         <dd class="info__mode">24/7</dd>

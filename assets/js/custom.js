@@ -27,24 +27,24 @@
       infinite: false,
       responsive: [
         {
-          breakpoint: 1024,
+          breakpoint: 1980,
           settings: {
             slidesToShow: 3,
             dots: true,
           },
         },
         {
-          breakpoint: 768,
+          breakpoint: 1385,
           settings: {
             slidesToShow: 2,
-            dots: false,
+            dots: true,
           },
         },
         {
-          breakpoint: 640,
+          breakpoint: 980,
           settings: {
             slidesToShow: 1,
-            dots: false,
+            // dots: false,
           },
         },
       ],

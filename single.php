@@ -16,7 +16,9 @@
                         <?php the_field('full_description'); ?>
                     </div>
                     <div class="single__img">
-                        <?php the_post_thumbnail() ?>
+                        <a data-lightbox="post-thumbnail" href="<?php the_post_thumbnail_url(); ?>">
+                            <?php the_post_thumbnail(); ?>
+                        </a>
                     </div>
                 </div>
                 <div class="single__bottom">

@@ -467,10 +467,10 @@ h2 {
     z-index: 99;
   }
   &::before {
-    left: 0;
+    left: -1px;
   }
   &::after {
-    right: 0;
+    right: -1px;
   }
 }
 .reviews-slider-item {
@@ -597,7 +597,7 @@ h2 {
   }
 }
 .wpcf7-response-output {
-  margin: 7px auto !important;
+  margin: 7px auto 35px !important;
   font-size: 18px;
   padding: 15px 40px !important;
   border-radius: 15px;
@@ -827,9 +827,461 @@ main {
       filter: blur(3px);
     }
   }
-
   .archive-list__item:hover {
     box-shadow: 0 0 30px #000000;
   }
 }
+
+@media not (hover: none) {
+  .portfolio-gallery-item {
+    .portfolio-gallery-item__title {
+      top: 0;
+    }
+    .portfolio-gallery-item__more {
+      bottom: 0;
+    }
+    .portfolio-gallery-item__pic {
+      filter: blur(0);
+    }
+  }
+}
+
+// ------ start десктоп 1 ------ //
+@media (max-width: 1385px) {
+  .container {
+    max-width: 1110px;
+  }
+  .about {
+    max-width: 590px;
+  }
+  .about__greet h1 {
+    font-size: 52px;
+    line-height: 1.25em;
+  }
+  .btn {
+    padding: 13px 30px 15px;
+    font-size: 22px;
+  }
+  .mypic {
+    height: 510px;
+  }
+  .block-portfolio,
+  .block-reviews,
+  .block-technology,
+  .block-feddbackform,
+  .footer {
+    padding: 45px 0;
+  }
+  .technology-item__title-img {
+    max-width: 85px;
+  }
+  h2 {
+    font-size: 34px;
+    margin: 0 0 35px;
+  }
+  .technology-item__title {
+    gap: 12px;
+    font-size: 14px;
+  }
+  .technology-item__progress .technology-item-notice {
+    font-size: 10px;
+    line-height: 1.5em;
+    left: 5px;
+    bottom: -65px;
+    width: 150px;
+  }
+}
+// ------ end десктоп 1 ------ //
+
+// ------ start планшет 1 ------ //
+@media (max-width: 1170px) {
+  .container {
+    padding: 0 20px;
+  }
+  // ------ end планшет 1 ------ //
+
+  // ------ start планшет 2 ------ //
+  @media (max-width: 1110px) {
+    .container {
+      max-width: 980px;
+    }
+  }
+  // ------ end планшет 2 ------ //
+
+  // ------ start планшет 3 ------ //
+  @media (max-width: 980px) {
+    nav.header__nav {
+      position: fixed;
+      top: 0;
+      right: -500px;
+      width: 100%;
+      height: 100%;
+      background-color: $color3;
+      transition: right $transition2 ease-in-out;
+    }
+    .menu-verhnee-menyu-container {
+      height: 100%;
+      ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 80px;
+        height: 100%;
+      }
+    }
+    .header__nav {
+      font-size: 20px;
+    }
+
+    .header__nav-mob {
+      cursor: pointer;
+      position: relative;
+      width: 40px;
+      height: 40px;
+      padding-top: 1px;
+    }
+    .header__nav-mob__open,
+    .header__nav-mob__close {
+      opacity: 0;
+      transition: opacity $transition1 ease-in-out;
+    }
+    .header__nav-mob__open {
+      width: 100%;
+      height: 7px;
+      border-radius: 10px;
+      background-color: $color4;
+      box-shadow: 0 15px 0 $color4, 0 30px 0 $color4;
+    }
+    .header__nav-mob__close {
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 7px;
+        background-color: $color4;
+        border-radius: 10px;
+      }
+      &:before {
+        top: calc(50% - 7px / 2);
+        transform: rotate(45deg);
+      }
+      &::after {
+        bottom: calc(50% - 7px / 2);
+        transform: rotate(-45deg);
+      }
+    }
+
+    .nav-mob_active {
+      opacity: 1;
+    }
+    nav.header__nav.header__nav_active {
+      right: 0;
+    }
+
+    .container {
+      max-width: 640px;
+    }
+    .about {
+      max-width: 370px;
+    }
+    .mypic {
+      height: 320px;
+    }
+    .about__greet h1 {
+      font-size: 32px;
+      line-height: 1.1em;
+    }
+    .btns {
+      gap: 15px;
+      bottom: 43px;
+    }
+    .btn {
+      padding: 10px 20px 11px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .header__inner {
+      font-size: 14px;
+    }
+    .block-top__inner {
+      padding: 20px 0;
+    }
+    h2 {
+      font-size: 27px;
+      margin: 15px 0 27px;
+    }
+
+    .portfolio-gallery-item__title,
+    .portfolio-gallery-item__more {
+      font-size: 16px;
+    }
+    .btn.btn_medium {
+      font-size: 14px;
+      padding: 7px 15px;
+    }
+    .block-portfolio,
+    .block-reviews,
+    .block-technology,
+    .block-feddbackform,
+    .footer {
+      padding: 20px 0;
+    }
+    .technology-item__title-img {
+      max-width: 60px;
+      border-radius: 7px;
+    }
+    .technology-item {
+      width: 25%;
+      margin-bottom: 35px;
+    }
+    .technology-item__progress {
+      height: 7px;
+      margin: 10px 30px 0;
+    }
+    .technology-item__title {
+      font-size: 11px;
+      gap: 5px;
+    }
+    .reviews-slider-item {
+      margin: 0 40px 0;
+    }
+    .reviews-slider::before,
+    .reviews-slider::after {
+      height: 96%;
+    }
+    .slick-dots {
+      gap: 7px;
+    }
+    .block-reviews .slick-dots {
+      margin: 3px 0 25px;
+    }
+    .feddbackform__group {
+      flex-direction: column;
+      .feddbackform__item {
+        width: 100%;
+      }
+    }
+    .feddbackform input:not([type='submit']),
+    .feddbackform select,
+    .feddbackform textarea {
+      padding: 7px 15px;
+      font-size: 14px;
+      line-height: 17px;
+      border-radius: 5px;
+    }
+    .feddbackform,
+    .feddbackform__group {
+      gap: 14px;
+    }
+    .feddbackform .feddbackform-item__label {
+      font-size: 14px;
+    }
+    .footer__top {
+      flex-direction: column;
+      margin: 7px 0 30px;
+    }
+    .archive .archive-list__item {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px 25px;
+    }
+    .archive h2 {
+      font-size: 18px;
+      line-height: 22px;
+      margin: 15px 0;
+      padding-bottom: 5px;
+    }
+    .single .single__title {
+      margin: 30px 0 20px;
+    }
+    .single__title h1 {
+      font-size: 22px;
+      line-height: 26px;
+    }
+    .single .single__top {
+      flex-direction: column;
+    }
+    .single .single__img {
+      max-width: 100%;
+    }
+  }
+  // ------ end планшет 3 ------ //
+
+  // ------ start мобайл 1 ------ //
+  @media (max-width: 690px) {
+    .technology-item__progress .technology-item-notice::before {
+      border-left: 20px solid transparent;
+      left: calc(50% - 10px);
+    }
+    .technology-item__progress .technology-item-notice {
+      left: -25px;
+      bottom: -65px;
+      width: 140px;
+    }
+    .technology-item {
+      margin-bottom: 22px;
+    }
+    .reviews-slider-item-inner h3 {
+      margin: 0 0 15px;
+      font-size: 16px;
+    }
+    .reviews-slider-item-inner {
+      padding: 12px;
+    }
+    .reviews-slider-item__desc {
+      padding: 7px 15px;
+      line-height: 1.4em;
+      font-size: 13px;
+    }
+    .footer__top {
+      font-size: 12px;
+      margin: 7px 0 15px;
+    }
+    .footer__item dl {
+      height: 20px;
+    }
+  }
+}
+// ------ end мобайл 1 ------ //
+
+// ------ start мобайл 2 ------ //
+@media (max-width: 600px) {
+  .container {
+    max-width: 390px;
+  }
+  .mypic {
+    height: 240px;
+  }
+  .about {
+    max-width: 204px;
+  }
+  .about__greet h1 {
+    font-size: 23px;
+    line-height: 1.2em;
+  }
+  .btns {
+    gap: 7px;
+    bottom: 7px;
+  }
+  .btn {
+    padding: 7px 11px 8px;
+    font-size: 10px;
+  }
+  .header__inner {
+    font-size: 10px;
+  }
+  h2 {
+    font-size: 22px;
+    margin: 9px 0 18px;
+  }
+  .technology-item {
+    width: 33%;
+  }
+  .technology-item__progress .technology-item-notice {
+    left: -25px;
+    bottom: -98px;
+    width: 105px;
+  }
+  .technology-item__progress .technology-item-notice::before {
+    left: calc(50% - 20px);
+  }
+  .technology-item__title {
+    font-size: 9px;
+    gap: 4px;
+  }
+  .technology-item__progress {
+    height: 5px;
+    margin: 4px 20px 0;
+  }
+  .reviews-slider-item {
+    margin: 0 3px 0;
+  }
+  .slick-dots {
+    gap: 3px;
+    li {
+      width: 7px;
+      height: 7px;
+    }
+  }
+  .reviews-slider::before,
+  .reviews-slider::after {
+    height: 100%;
+  }
+  .reviews-slider-item-inner .review-owner .review-owner__top {
+    gap: 10px;
+    margin: 25px 0 5px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .reviews-slider-item__pic {
+    width: 40px;
+  }
+  .footer__item dl {
+    height: 20px;
+  }
+  .footer__top dd {
+    letter-spacing: normal;
+  }
+  .footer__top {
+    font-size: 10px;
+    margin: 3px 0 13px;
+  }
+  .footer_bottom {
+    font-size: 9px;
+    line-height: 1.3em;
+    margin-top: 25px;
+  }
+  .archive .post-thumbnail,
+  .archive .archive-list__item-body-text {
+    width: 100%;
+  }
+  .archive .archive-list__item-body-text {
+    font-size: 14px;
+  }
+  .archive .archive-list__item-body {
+    flex-direction: column;
+  }
+  .archive__title h1,
+  .contacts__title h1 {
+    font-size: 42px;
+    margin: 3px 0 -20px;
+  }
+  .archive,
+  .single,
+  .index,
+  .contacts {
+    padding: 15px 0 30px;
+    line-height: 1.5em;
+  }
+  .feddbackform,
+  .feddbackform__group {
+    gap: 5px;
+  }
+
+  .header__nav-mob {
+    width: 32px;
+    height: 32px;
+    padding-top: 3px;
+  }
+  .header__nav-mob__open {
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: $color4;
+    box-shadow: 0 10px 0 $color4, 0 20px 0 $color4;
+  }
+  .header__nav-mob__close:before,
+  .header__nav-mob__close:after {
+    height: 5px;
+  }
+  .header__nav-mob__close:before {
+    top: calc(50% - 2.5px);
+  }
+  .header__nav-mob__close:after {
+    bottom: calc(50% - 2.5px);
+  }
+}
+// ------ end мобайл 2 ------ //
 // ====== END MEDIA ====== //
