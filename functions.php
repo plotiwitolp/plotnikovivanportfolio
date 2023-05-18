@@ -127,7 +127,7 @@ add_action('admin_menu', 'remove_comments_menu');
 function custom_posts_per_page($query)
 {
     if (!is_admin() && is_post_type_archive('portfolio')) {
-        $query->set('posts_per_page', 4);
+        $query->set('posts_per_page', 10);
     } elseif (!is_admin() && is_post_type_archive('technology')) {
         $query->set('posts_per_page', 20);
     }
