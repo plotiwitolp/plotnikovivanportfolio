@@ -116,7 +116,6 @@ html {
     }
   }
 }
-
 .info {
   display: flex;
   gap: 20px;
@@ -124,10 +123,6 @@ html {
 .info__item {
   display: flex;
   gap: 5px;
-}
-.info__label {
-}
-.info__mode {
 }
 .info__mode_on {
   color: #28ff28;
@@ -151,15 +146,6 @@ html {
     }
   }
 }
-.header__nav-mob {
-}
-.header__nav-mob__open {
-}
-.nav-mob_active {
-}
-.header__nav-mob__close {
-}
-
 .block-top {
   background-color: $color1;
   color: $color6;
@@ -193,7 +179,6 @@ html {
 .about__greet_accent {
   color: $color4;
 }
-
 .mypic {
   display: flex;
   justify-content: flex-end;
@@ -214,8 +199,6 @@ html {
   position: absolute;
   z-index: 99;
 }
-.btns__order-site {
-}
 .btn {
   background-color: $color5;
   color: $color7;
@@ -226,8 +209,6 @@ html {
   box-shadow: 0px 0px 7px rgb(37 233 97 / 76%);
   transition: box-shadow $transition1 ease-in-out;
   width: fit-content;
-}
-.btns__order-rework {
 }
 .block-portfolio,
 .block-reviews,
@@ -240,20 +221,15 @@ html {
   background-color: #0b0d17;
   color: $color6;
 }
-
 .block-technology,
 .block-feddbackform {
   background-color: $color7;
   color: $color6;
 }
-
 h2 {
   font-size: 36px;
   margin: 0 0 50px;
   font-weight: 600;
-}
-
-.block-portfolio__inner {
 }
 .section__title {
   .fa {
@@ -266,12 +242,6 @@ h2 {
     transition: color $transition1 ease-in-out;
   }
 }
-
-.fa-chevron-right {
-}
-.portfolio-gallery {
-}
-
 .slick-dots {
   display: flex;
   justify-content: center;
@@ -431,10 +401,6 @@ h2 {
   }
 }
 
-.html {
-}
-.animate__fadeInLeft {
-}
 .block-reviews {
   background-color: $color8;
   .section__title {
@@ -543,19 +509,6 @@ h2 {
   font-size: 14px;
   padding: 7px 21px;
 }
-.reviews-slider-item-btns__item {
-}
-.reviews-slider-btns {
-}
-.reviews-slider-btns__prev {
-}
-.fa-chevron-left {
-}
-.reviews-slider-btns__next {
-}
-.block-feddbackform {
-}
-
 .feddbackform {
   display: flex;
   flex-direction: column;
