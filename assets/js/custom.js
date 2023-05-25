@@ -1,8 +1,5 @@
 (function ($) {
   $(document).ready(function () {
-    console.log('jquery is working...');
-    // START jQuery
-
     $('.collapse').on('click', function () {
       if ($('.header__inner').hasClass('header__inner_hide')) {
         faAngleUp();
@@ -10,12 +7,10 @@
         faAngleDown();
       }
     });
-
     $('.portfolio-gallery').slick({
       arrows: false,
       dots: true,
     });
-
     $('.reviews-slider').slick({
       arrows: false,
       slidesToShow: 3,
@@ -49,7 +44,6 @@
         },
       ],
     });
-
     // start functions
     function faAngleUp() {
       $('.fa-angle-up').addClass('collapse_active');
@@ -68,22 +62,18 @@
       $('.header__inner').addClass('header__inner_hide');
     }
     // end functions
-
     $('.btns__order-rework').on('click', function () {
       $('select.wpcf7-form-control option[value="Доработка сайта"]').prop('selected', true);
     });
     $('.btns__order-site').on('click', function () {
       $('select.wpcf7-form-control option[value="Создание сайта-визитки"]').prop('selected', true);
     });
-
     new WOW().init();
-
     // start technology
     $('.technology-item__progress span').each(function () {
       $(this).css({ width: `${$(this).attr('data-level')}%` });
     });
     // end technology
-
     // start menu
     $('.header__nav-mob').on('click', function () {
       $(this).find('div').toggleClass('nav-mob_active');
@@ -94,13 +84,22 @@
       }
     });
     // end menu
-
     lightbox.option({
       resizeDuration: 300,
       wrapAround: true,
       albumLabel: 'Картинка %1 из %2',
     });
 
-    // END jQuery
+    $(document).ready(function () {
+      $('.product-see-more').on('click', function () {
+        $('.poduct-tabs-inner .wd-nav-tabs li').removeClass('active');
+        $('#tab-title-additional_information').addClass('active wd-active');
+        $('.poduct-tabs-inner #tab-description').hide();
+        $('.poduct-tabs-inner #tab-wd_additional_tab').hide();
+        $('.poduct-tabs-inner #tab-wd_additional_tab_2').hide();
+        $('.poduct-tabs-inner #tab-wd_additional_tab_3').hide();
+        $('.poduct-tabs-inner #tab-additional_information').show();
+      });
+    });
   });
 })(jQuery);
