@@ -39,7 +39,6 @@
           breakpoint: 980,
           settings: {
             slidesToShow: 1,
-            // dots: false,
           },
         },
       ],
@@ -88,18 +87,6 @@
       resizeDuration: 300,
       wrapAround: true,
       albumLabel: 'Картинка %1 из %2',
-    });
-
-    $(document).ready(function () {
-      $('.product-see-more').on('click', function () {
-        $('.poduct-tabs-inner .wd-nav-tabs li').removeClass('active');
-        $('#tab-title-additional_information').addClass('active wd-active');
-        $('.poduct-tabs-inner #tab-description').hide();
-        $('.poduct-tabs-inner #tab-wd_additional_tab').hide();
-        $('.poduct-tabs-inner #tab-wd_additional_tab_2').hide();
-        $('.poduct-tabs-inner #tab-wd_additional_tab_3').hide();
-        $('.poduct-tabs-inner #tab-additional_information').show();
-      });
     });
   });
 })(jQuery);
