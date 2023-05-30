@@ -1,5 +1,6 @@
 (function ($) {
   $(document).ready(function () {
+    //start
     $('.collapse').on('click', function () {
       if ($('.header__inner').hasClass('header__inner_hide')) {
         faAngleUp();
@@ -88,5 +89,6 @@
       wrapAround: true,
       albumLabel: 'Картинка %1 из %2',
     });
+    // end
   });
 })(jQuery);
