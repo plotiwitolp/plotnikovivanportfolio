@@ -800,6 +800,7 @@ h2 {
   transition: -webkit-box-shadow 0.2s ease-in-out;
   transition: box-shadow 0.2s ease-in-out;
   transition: box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  background-color: rgba(26, 26, 26, 0.3294117647);
 }
 .archive .archive-list__item-body-text {
   width: 50%;
