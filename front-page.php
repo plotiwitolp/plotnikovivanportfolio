@@ -55,28 +55,31 @@
                             $query->the_post();
                     ?>
                             <div class="portfolio-gallery-item wow animate__animated animate__fadeInRight">
-                                <div class="portfolio-gallery-item__title">
-                                    <h3>
-                                        <?php echo get_the_title() ?>
-                                    </h3>
-                                </div>
-                                <?php if (has_post_thumbnail()) : ?>
-                                    <div class="portfolio-gallery-item__pic">
-                                        <?php the_post_thumbnail(); ?>
+                                <a href="<?php echo get_permalink(); ?>">
+                                    <div class="portfolio-gallery-item__title">
+                                        <h3>
+                                            <?php echo get_the_title() ?>
+                                        </h3>
                                     </div>
-                                <?php endif; ?>
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <div class="portfolio-gallery-item__pic">
+                                            <?php the_post_thumbnail(); ?>
+                                        </div>
+                                    <?php endif; ?>
 
-                                <div class="portfolio-gallery-item__desc">
-                                    <?php // echo get_the_content() 
-                                    ?>
-                                </div>
-                                <div class="portfolio-gallery-item__more">
-                                    <a href="<?php echo get_permalink(); ?>">
-                                        <span class="btn btn_medium">
-                                            Подробнее
-                                        </span>
-                                    </a>
-                                </div>
+                                    <div class="portfolio-gallery-item__desc">
+                                        <?php // echo get_the_content() 
+                                        ?>
+                                    </div>
+                                    <!-- <div class="portfolio-gallery-item__more">
+                                        <a href="<?php // echo get_permalink(); 
+                                                    ?>">
+                                            <span class="btn btn_medium">
+                                                Подробнее
+                                            </span>
+                                        </a>
+                                    </div> -->
+                                </a>
                             </div>
                     <?php
                         }

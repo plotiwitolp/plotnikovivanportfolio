@@ -8,10 +8,10 @@
         faAngleDown();
       }
     });
-    $('.portfolio-gallery').slick({
-      arrows: false,
-      dots: true,
-    });
+    // $('.portfolio-gallery').slick({
+    //   arrows: false,
+    //   dots: true,
+    // });
     $('.reviews-slider').slick({
       arrows: false,
       slidesToShow: 3,
