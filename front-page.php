@@ -47,6 +47,8 @@
                     <?php
                     $args = array(
                         'post_type' => 'portfolio',
+                        'order' => 'ASC',
+                        'orderby' => 'date',
                         'posts_per_page' => 4
                     );
                     $query = new WP_Query($args);
@@ -88,7 +90,6 @@
                         echo 'К сожалению, в портфолио пока ничего нет.';
                     }
                     ?>
-
                 </div>
             </div>
         </section>
@@ -105,7 +106,6 @@
                 </h2>
             </div>
             <div class="technology">
-
                 <?php
                 $args = [
                     'post_type' => 'technology',
@@ -140,7 +140,7 @@
                     }
                     wp_reset_postdata();
                 } else {
-                    echo 'К сожалени, в ни одной технологии пока ещё нет.';
+                    echo 'К сожалению, ни одной технологии пока ещё нет.';
                 }
                 ?>
             </div>
@@ -206,7 +206,6 @@
                                                     </a>
                                                 </div>
                                             <?php } ?>
-
 
                                         </div>
 

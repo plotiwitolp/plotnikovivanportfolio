@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="page">
-    <div class="section">
+    <div class="container">
         404
     </div>
 </div>

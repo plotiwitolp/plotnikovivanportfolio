@@ -268,8 +268,9 @@ h2 {
 }
 .portfolio-gallery-item {
   position: relative;
-  // border-radius: 11px;
   overflow: hidden;
+  max-height: 295px;
+  border-radius: 6px;
   &.slick-current {
     .portfolio-gallery-item__pic {
       img {
@@ -1012,7 +1013,7 @@ main {
 
     .portfolio-gallery-item .portfolio-gallery-item__title,
     .portfolio-gallery-item .portfolio-gallery-item__more {
-      font-size: 18px;
+      font-size: 14px;
       line-height: 1.4em;
       padding: 35px 35px;
     }
@@ -1236,8 +1237,8 @@ main {
   }
   .portfolio-gallery-item .portfolio-gallery-item__title,
   .portfolio-gallery-item .portfolio-gallery-item__more {
-    font-size: 15px;
-    line-height: 1.2em;
+    font-size: 9px;
+    line-height: 1.4em;
     padding: 35px 35px;
   }
   .archive .post-thumbnail,
